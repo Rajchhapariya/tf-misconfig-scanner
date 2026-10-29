@@ -15,10 +15,15 @@ class ScannerEngine:
     def __init__(self, rules: Optional[List[Rule]] = None):
         self.rules = rules or ALL_RULES
 
-    def scan(self, target_path: Path | str) -> ScanResult:
+    def scan(self, target_path: Path | str, is_plan_json: bool = False) -> ScanResult:
         start_time = time.perf_counter()
         target = Path(target_path)
-        context = parse_directory(target)
+
+        if is_plan_json or (target.is_file() and target.suffix.lower() == ".json"):
+            from tfscan.parser import parse_plan_json
+            context = parse_plan_json(target)
+        else:
+            context = parse_directory(target)
 
         findings: List[Finding] = []
         evaluated_addresses = set()

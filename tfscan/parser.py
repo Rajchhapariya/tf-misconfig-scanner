@@ -226,6 +226,49 @@ def resolve_value(val: Any, context: ScanContext) -> Tuple[Any, bool]:
     return val, True
 
 
+def parse_plan_json(plan_path: Path) -> ScanContext:
+    """
+    Parses a Terraform plan JSON file (from `terraform show -json <plan>`).
+    Extracts resources from planned_values.root_module.resources.
+    """
+    import json
+
+    plan_file = plan_path.resolve()
+    context = ScanContext(target_path=plan_file, files=[plan_file])
+
+    with open(plan_file, "r", encoding="utf-8") as f:
+        plan_data = json.load(f)
+
+    def extract_module_resources(module_node: dict):
+        for res_entry in module_node.get("resources", []):
+            rtype = res_entry.get("type")
+            rname = res_entry.get("name")
+            addr = res_entry.get("address", f"{rtype}.{rname}")
+            values = res_entry.get("values", {}) or {}
+
+            res = Resource(
+                file_path=plan_file,
+                line_number=1,
+                resource_type=rtype,
+                resource_name=rname,
+                address=addr,
+                attributes=values,
+                raw_block=res_entry,
+            )
+            if rtype not in context.resources:
+                context.resources[rtype] = []
+            context.resources[rtype].append(res)
+            context.all_resources_by_address[addr] = res
+
+        for child in module_node.get("child_modules", []):
+            extract_module_resources(child)
+
+    root_mod = plan_data.get("planned_values", {}).get("root_module", {})
+    extract_module_resources(root_mod)
+
+    return context
+
+
 def parse_directory(target_path: Path) -> ScanContext:
     """
     Parses all .tf and .tfvars files in the target directory or single file.

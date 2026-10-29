@@ -34,6 +34,11 @@ def create_parser() -> argparse.ArgumentParser:
         help="Output serialization format (default: table).",
     )
     scan_parser.add_argument(
+        "--plan",
+        action="store_true",
+        help="Scan a Terraform plan JSON file (from `terraform show -json`).",
+    )
+    scan_parser.add_argument(
         "-o",
         "--output",
         type=str,
@@ -55,7 +60,7 @@ def main(argv=None) -> int:
             return 2
 
         engine = ScannerEngine()
-        result = engine.scan(target)
+        result = engine.scan(target, is_plan_json=args.plan)
 
         if args.format == "json":
             output_text = format_json(result)
