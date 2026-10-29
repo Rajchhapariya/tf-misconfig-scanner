@@ -1,0 +1,3586 @@
+{
+  "target_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures",
+  "files_scanned": 96,
+  "resources_evaluated": 20,
+  "scan_duration_ms": 103.78,
+  "summary": {
+    "PASS": 97,
+    "FAIL": 93,
+    "UNKNOWN": 22,
+    "TOTAL": 212
+  },
+  "findings": [
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\fail\\case1_v3_no_pab.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\fail\\case2_v4_pab_partial.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\fail\\case3_v4_pab_all_false.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\pass\\case1_v4_pab_all_true.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\pass\\case2_v4_pab_linked_by_bucket_attr.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\pass\\case3_v4_pab_linked_by_name.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\unknown\\case1_var_unresolved.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\unknown\\case2_data_source.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\fail\\case1_v3_public_read.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\fail\\case2_v3_public_read_write.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\fail\\case3_v4_acl_public_read.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\pass\\case1_v3_private.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\pass\\case2_v4_acl_private.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\pass\\case3_v4_acl_log_delivery_write.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\unknown\\case1_var_acl.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\unknown\\case2_module_output_acl.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\fail\\case1_v3_no_sse.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\fail\\case2_v4_no_sse.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\fail\\case3_v4_unrelated_resource.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\pass\\case1_v3_sse_aes256.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\pass\\case2_v3_sse_kms.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\pass\\case3_v4_sse_resource.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\unknown\\case1_unresolved_algo.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\unknown\\case2_module_kms.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\fail\\case1_v3_no_pab.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\fail\\case2_v4_pab_partial.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\fail\\case3_v4_pab_all_false.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\pass\\case1_v4_pab_all_true.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\pass\\case2_v4_pab_linked_by_bucket_attr.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\pass\\case3_v4_pab_linked_by_name.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\unknown\\case1_var_unresolved.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\unknown\\case2_data_source.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\fail\\case1_v3_public_read.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\fail\\case2_v3_public_read_write.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\fail\\case3_v4_acl_public_read.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\pass\\case1_v3_private.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\pass\\case2_v4_acl_private.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\pass\\case3_v4_acl_log_delivery_write.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\unknown\\case1_var_acl.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\unknown\\case2_module_output_acl.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\fail\\case1_v3_no_sse.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\fail\\case2_v4_no_sse.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\fail\\case3_v4_unrelated_resource.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\pass\\case1_v3_sse_aes256.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\pass\\case2_v3_sse_kms.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\pass\\case3_v4_sse_resource.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\unknown\\case1_unresolved_algo.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\unknown\\case2_module_kms.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\fail\\case1_v3_no_pab.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\fail\\case2_v4_pab_partial.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\fail\\case3_v4_pab_all_false.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\pass\\case1_v4_pab_all_true.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\pass\\case2_v4_pab_linked_by_bucket_attr.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\pass\\case3_v4_pab_linked_by_name.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\unknown\\case1_var_unresolved.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-01\\unknown\\case2_data_source.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\fail\\case1_v3_public_read.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\fail\\case2_v3_public_read_write.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\fail\\case3_v4_acl_public_read.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\pass\\case1_v3_private.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\pass\\case2_v4_acl_private.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\pass\\case3_v4_acl_log_delivery_write.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\unknown\\case1_var_acl.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-02\\unknown\\case2_module_output_acl.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\fail\\case1_v3_no_sse.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\fail\\case2_v4_no_sse.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\fail\\case3_v4_unrelated_resource.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\pass\\case1_v3_sse_aes256.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\pass\\case2_v3_sse_kms.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\pass\\case3_v4_sse_resource.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\unknown\\case1_unresolved_algo.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\S3-03\\unknown\\case2_module_kms.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\fail\\case1_inline_all_0.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "Ingress rule allows unrestricted access to port 22 (range 22-22).",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\fail\\case2_rule_resource_ipv6.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group defines no inline ingress rules.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\fail\\case3_port_range_includes_22.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "Ingress rule allows unrestricted access to port 22 (range 20-25).",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\pass\\case1_restricted_cidr.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group does not allow unrestricted ingress to port 22.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\pass\\case2_different_port.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group does not allow unrestricted ingress to port 22.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\pass\\case3_egress_only.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group defines no inline ingress rules.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\unknown\\case1_cidr_variable.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "Ingress CIDR block expression cannot be resolved statically.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\unknown\\case2_port_variable.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "Ingress port/protocol expression cannot be resolved statically.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\fail\\case1_inline_rdp.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group does not allow unrestricted ingress to port 22.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\fail\\case2_rule_ipv6_rdp.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group defines no inline ingress rules.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\fail\\case3_all_traffic_rdp.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "Ingress rule allows all protocols/ports from public CIDR (exposing port 22).",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\pass\\case1_restricted_ip.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group does not allow unrestricted ingress to port 22.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\pass\\case2_port_443.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group does not allow unrestricted ingress to port 22.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\pass\\case3_rule_internal.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group defines no inline ingress rules.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\unknown\\case1_cidr_var.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "Ingress CIDR block expression cannot be resolved statically.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\unknown\\case2_rule_remote_state.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "Security group defines no inline ingress rules.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group_rule.ssh_ipv6",
+      "resource_type": "aws_security_group_rule",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\fail\\case2_rule_resource_ipv6.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Ingress rule allows unrestricted access to port 22 (range 22-22).",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group_rule.ssh_egress",
+      "resource_type": "aws_security_group_rule",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\pass\\case3_egress_only.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "Security group rule is not an ingress rule.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group_rule.rdp_rule",
+      "resource_type": "aws_security_group_rule",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\fail\\case2_rule_ipv6_rdp.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "Port range does not expose target administrative port.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group_rule.rdp_internal",
+      "resource_type": "aws_security_group_rule",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\pass\\case3_rule_internal.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "No public 0.0.0.0/0 or ::/0 CIDR in ingress rule.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-01",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group_rule.rdp_state",
+      "resource_type": "aws_security_group_rule",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\unknown\\case2_rule_remote_state.tf",
+      "line_number": 9,
+      "status": "UNKNOWN",
+      "message": "Ingress CIDR block expression cannot be resolved statically.",
+      "cis_controls": [
+        "5.2"
+      ],
+      "aws_controls": [
+        "[EC2.13]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\fail\\case1_inline_all_0.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group does not allow unrestricted ingress to port 3389.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\fail\\case2_rule_resource_ipv6.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group defines no inline ingress rules.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\fail\\case3_port_range_includes_22.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group does not allow unrestricted ingress to port 3389.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\pass\\case1_restricted_cidr.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group does not allow unrestricted ingress to port 3389.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\pass\\case2_different_port.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group does not allow unrestricted ingress to port 3389.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\pass\\case3_egress_only.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group defines no inline ingress rules.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\unknown\\case1_cidr_variable.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "Ingress CIDR block expression cannot be resolved statically.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\unknown\\case2_port_variable.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "Ingress port/protocol expression cannot be resolved statically.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\fail\\case1_inline_rdp.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "Ingress rule allows unrestricted access to port 3389 (range 3389-3389).",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\fail\\case2_rule_ipv6_rdp.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group defines no inline ingress rules.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\fail\\case3_all_traffic_rdp.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "Ingress rule allows all protocols/ports from public CIDR (exposing port 3389).",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\pass\\case1_restricted_ip.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group does not allow unrestricted ingress to port 3389.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\pass\\case2_port_443.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group does not allow unrestricted ingress to port 3389.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\pass\\case3_rule_internal.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "Security group defines no inline ingress rules.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\unknown\\case1_cidr_var.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "Ingress CIDR block expression cannot be resolved statically.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group.sg",
+      "resource_type": "aws_security_group",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\unknown\\case2_rule_remote_state.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "Security group defines no inline ingress rules.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group_rule.ssh_ipv6",
+      "resource_type": "aws_security_group_rule",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\fail\\case2_rule_resource_ipv6.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "Port range does not expose target administrative port.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group_rule.ssh_egress",
+      "resource_type": "aws_security_group_rule",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-01\\pass\\case3_egress_only.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "Security group rule is not an ingress rule.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group_rule.rdp_rule",
+      "resource_type": "aws_security_group_rule",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\fail\\case2_rule_ipv6_rdp.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "Ingress rule allows unrestricted access to port 3389 (range 3389-3389).",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group_rule.rdp_internal",
+      "resource_type": "aws_security_group_rule",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\pass\\case3_rule_internal.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "No public 0.0.0.0/0 or ::/0 CIDR in ingress rule.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "SG-02",
+      "rule_title": "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389",
+      "severity": "HIGH",
+      "resource_address": "aws_security_group_rule.rdp_state",
+      "resource_type": "aws_security_group_rule",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SG-02\\unknown\\case2_rule_remote_state.tf",
+      "line_number": 9,
+      "status": "UNKNOWN",
+      "message": "Ingress CIDR block expression cannot be resolved statically.",
+      "cis_controls": [
+        "5.3"
+      ],
+      "aws_controls": [
+        "[EC2.14]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\fail\\case1_explicit_true.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "RDS instance has publicly_accessible configured as true, exposing the database to the internet.",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\fail\\case2_resolved_default_true.tf",
+      "line_number": 6,
+      "status": "FAIL",
+      "message": "RDS instance has publicly_accessible configured as true, exposing the database to the internet.",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\fail\\case3_expression_true.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "RDS instance has publicly_accessible configured as true, exposing the database to the internet.",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\pass\\case1_explicit_false.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible is set to false.",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\pass\\case2_omitted_default_false.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\pass\\case3_resolved_default_false.tf",
+      "line_number": 6,
+      "status": "FAIL",
+      "message": "RDS instance has publicly_accessible configured as true, exposing the database to the internet.",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\unknown\\case1_unresolved_var.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "RDS instance publicly_accessible expression cannot be resolved statically.",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\unknown\\case2_data_source.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "RDS instance publicly_accessible expression cannot be resolved statically.",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\fail\\case1_explicit_false.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\fail\\case2_omitted_missing.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\fail\\case3_resolved_default_false.tf",
+      "line_number": 6,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\pass\\case1_explicit_true.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\pass\\case2_with_kms_key.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\pass\\case3_resolved_default_true.tf",
+      "line_number": 6,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\unknown\\case1_unresolved_var.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\unknown\\case2_module_output.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\fail\\case2_db_literal_password.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\fail\\case3_resolved_default_password.tf",
+      "line_number": 6,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\pass\\case2_var_no_default.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\unknown\\case1_unresolved_var_password.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-01",
+      "rule_title": "RDS instance has publicly_accessible = true",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\unknown\\case2_vault_secret.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
+      "cis_controls": [
+        "2.3.1"
+      ],
+      "aws_controls": [
+        "[RDS.2]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\fail\\case1_explicit_true.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\fail\\case2_resolved_default_true.tf",
+      "line_number": 6,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\fail\\case3_expression_true.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\pass\\case1_explicit_false.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\pass\\case2_omitted_default_false.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\pass\\case3_resolved_default_false.tf",
+      "line_number": 6,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\unknown\\case1_unresolved_var.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\unknown\\case2_data_source.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\fail\\case1_explicit_false.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\fail\\case2_omitted_missing.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\fail\\case3_resolved_default_false.tf",
+      "line_number": 6,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\pass\\case1_explicit_true.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "RDS instance has storage encryption enabled.",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\pass\\case2_with_kms_key.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "RDS instance has storage encryption enabled.",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\pass\\case3_resolved_default_true.tf",
+      "line_number": 6,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\unknown\\case1_unresolved_var.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "RDS instance storage_encrypted expression cannot be resolved statically.",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\unknown\\case2_module_output.tf",
+      "line_number": 1,
+      "status": "UNKNOWN",
+      "message": "RDS instance storage_encrypted expression cannot be resolved statically.",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\fail\\case2_db_literal_password.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\fail\\case3_resolved_default_password.tf",
+      "line_number": 6,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\pass\\case2_var_no_default.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\unknown\\case1_unresolved_var_password.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "RDS-02",
+      "rule_title": "RDS instance has storage_encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\unknown\\case2_vault_secret.tf",
+      "line_number": 5,
+      "status": "FAIL",
+      "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.3.2"
+      ],
+      "aws_controls": [
+        "[RDS.3]"
+      ]
+    },
+    {
+      "rule_id": "EBS-01",
+      "rule_title": "EBS volume has encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_ebs_volume.vol",
+      "resource_type": "aws_ebs_volume",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\EBS-01\\fail\\case1_explicit_false.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "EBS volume encrypted argument is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.2.1"
+      ],
+      "aws_controls": [
+        "[EC2.3]"
+      ]
+    },
+    {
+      "rule_id": "EBS-01",
+      "rule_title": "EBS volume has encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_ebs_volume.vol",
+      "resource_type": "aws_ebs_volume",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\EBS-01\\fail\\case2_omitted_missing.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "EBS volume encrypted argument is missing or omitted (defaults to unencrypted).",
+      "cis_controls": [
+        "2.2.1"
+      ],
+      "aws_controls": [
+        "[EC2.3]"
+      ]
+    },
+    {
+      "rule_id": "EBS-01",
+      "rule_title": "EBS volume has encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_ebs_volume.vol",
+      "resource_type": "aws_ebs_volume",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\EBS-01\\fail\\case3_resolved_default_false.tf",
+      "line_number": 6,
+      "status": "FAIL",
+      "message": "EBS volume encrypted argument is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.2.1"
+      ],
+      "aws_controls": [
+        "[EC2.3]"
+      ]
+    },
+    {
+      "rule_id": "EBS-01",
+      "rule_title": "EBS volume has encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_ebs_volume.vol",
+      "resource_type": "aws_ebs_volume",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\EBS-01\\pass\\case1_explicit_true.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "EBS volume encryption is enabled.",
+      "cis_controls": [
+        "2.2.1"
+      ],
+      "aws_controls": [
+        "[EC2.3]"
+      ]
+    },
+    {
+      "rule_id": "EBS-01",
+      "rule_title": "EBS volume has encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_ebs_volume.vol",
+      "resource_type": "aws_ebs_volume",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\EBS-01\\pass\\case2_with_kms.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "EBS volume encryption is enabled.",
+      "cis_controls": [
+        "2.2.1"
+      ],
+      "aws_controls": [
+        "[EC2.3]"
+      ]
+    },
+    {
+      "rule_id": "EBS-01",
+      "rule_title": "EBS volume has encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_ebs_volume.vol",
+      "resource_type": "aws_ebs_volume",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\EBS-01\\pass\\case3_resolved_default_true.tf",
+      "line_number": 6,
+      "status": "FAIL",
+      "message": "EBS volume encrypted argument is set to 'False' instead of true.",
+      "cis_controls": [
+        "2.2.1"
+      ],
+      "aws_controls": [
+        "[EC2.3]"
+      ]
+    },
+    {
+      "rule_id": "EBS-01",
+      "rule_title": "EBS volume has encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_ebs_volume.vol",
+      "resource_type": "aws_ebs_volume",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\EBS-01\\unknown\\case1_unresolved_var.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "EBS volume encrypted expression cannot be resolved statically.",
+      "cis_controls": [
+        "2.2.1"
+      ],
+      "aws_controls": [
+        "[EC2.3]"
+      ]
+    },
+    {
+      "rule_id": "EBS-01",
+      "rule_title": "EBS volume has encrypted false or missing",
+      "severity": "HIGH",
+      "resource_address": "aws_ebs_volume.vol",
+      "resource_type": "aws_ebs_volume",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\EBS-01\\unknown\\case2_data_lookup.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "EBS volume encrypted expression cannot be resolved statically.",
+      "cis_controls": [
+        "2.2.1"
+      ],
+      "aws_controls": [
+        "[EC2.3]"
+      ]
+    },
+    {
+      "rule_id": "CT-01",
+      "rule_title": "CloudTrail trail is not multi-region, or log file validation is off",
+      "severity": "HIGH",
+      "resource_address": "aws_cloudtrail.trail",
+      "resource_type": "aws_cloudtrail",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\CT-01\\fail\\case1_single_region.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "CloudTrail trail misconfigured: is_multi_region_trail is false or omitted (must be true).",
+      "cis_controls": [
+        "3.1",
+        "3.2"
+      ],
+      "aws_controls": [
+        "[CloudTrail.1]",
+        "[CloudTrail.4]"
+      ]
+    },
+    {
+      "rule_id": "CT-01",
+      "rule_title": "CloudTrail trail is not multi-region, or log file validation is off",
+      "severity": "HIGH",
+      "resource_address": "aws_cloudtrail.trail",
+      "resource_type": "aws_cloudtrail",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\CT-01\\fail\\case2_no_log_validation.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "CloudTrail trail misconfigured: enable_log_file_validation is false or omitted (must be true).",
+      "cis_controls": [
+        "3.1",
+        "3.2"
+      ],
+      "aws_controls": [
+        "[CloudTrail.1]",
+        "[CloudTrail.4]"
+      ]
+    },
+    {
+      "rule_id": "CT-01",
+      "rule_title": "CloudTrail trail is not multi-region, or log file validation is off",
+      "severity": "HIGH",
+      "resource_address": "aws_cloudtrail.trail",
+      "resource_type": "aws_cloudtrail",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\CT-01\\fail\\case3_both_omitted.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "CloudTrail trail misconfigured: is_multi_region_trail is false or omitted (must be true); enable_log_file_validation is false or omitted (must be true).",
+      "cis_controls": [
+        "3.1",
+        "3.2"
+      ],
+      "aws_controls": [
+        "[CloudTrail.1]",
+        "[CloudTrail.4]"
+      ]
+    },
+    {
+      "rule_id": "CT-01",
+      "rule_title": "CloudTrail trail is not multi-region, or log file validation is off",
+      "severity": "HIGH",
+      "resource_address": "aws_cloudtrail.trail",
+      "resource_type": "aws_cloudtrail",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\CT-01\\pass\\case1_both_true.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "CloudTrail trail is configured across all regions with log file validation active.",
+      "cis_controls": [
+        "3.1",
+        "3.2"
+      ],
+      "aws_controls": [
+        "[CloudTrail.1]",
+        "[CloudTrail.4]"
+      ]
+    },
+    {
+      "rule_id": "CT-01",
+      "rule_title": "CloudTrail trail is not multi-region, or log file validation is off",
+      "severity": "HIGH",
+      "resource_address": "aws_cloudtrail.trail",
+      "resource_type": "aws_cloudtrail",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\CT-01\\pass\\case2_resolved_defaults_true.tf",
+      "line_number": 11,
+      "status": "PASS",
+      "message": "CloudTrail trail is configured across all regions with log file validation active.",
+      "cis_controls": [
+        "3.1",
+        "3.2"
+      ],
+      "aws_controls": [
+        "[CloudTrail.1]",
+        "[CloudTrail.4]"
+      ]
+    },
+    {
+      "rule_id": "CT-01",
+      "rule_title": "CloudTrail trail is not multi-region, or log file validation is off",
+      "severity": "HIGH",
+      "resource_address": "aws_cloudtrail.trail",
+      "resource_type": "aws_cloudtrail",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\CT-01\\pass\\case3_full_compliant_trail.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "CloudTrail trail is configured across all regions with log file validation active.",
+      "cis_controls": [
+        "3.1",
+        "3.2"
+      ],
+      "aws_controls": [
+        "[CloudTrail.1]",
+        "[CloudTrail.4]"
+      ]
+    },
+    {
+      "rule_id": "CT-01",
+      "rule_title": "CloudTrail trail is not multi-region, or log file validation is off",
+      "severity": "HIGH",
+      "resource_address": "aws_cloudtrail.trail",
+      "resource_type": "aws_cloudtrail",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\CT-01\\unknown\\case1_unresolved_multi_region.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "CloudTrail multi-region or log file validation expressions cannot be resolved statically.",
+      "cis_controls": [
+        "3.1",
+        "3.2"
+      ],
+      "aws_controls": [
+        "[CloudTrail.1]",
+        "[CloudTrail.4]"
+      ]
+    },
+    {
+      "rule_id": "CT-01",
+      "rule_title": "CloudTrail trail is not multi-region, or log file validation is off",
+      "severity": "HIGH",
+      "resource_address": "aws_cloudtrail.trail",
+      "resource_type": "aws_cloudtrail",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\CT-01\\unknown\\case2_unresolved_validation.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "CloudTrail multi-region or log file validation expressions cannot be resolved statically.",
+      "cis_controls": [
+        "3.1",
+        "3.2"
+      ],
+      "aws_controls": [
+        "[CloudTrail.1]",
+        "[CloudTrail.4]"
+      ]
+    },
+    {
+      "rule_id": "IAM-01",
+      "rule_title": "IAM policy document allows Action: \"*\" on Resource: \"*\"",
+      "severity": "CRITICAL",
+      "resource_address": "aws_iam_policy.admin",
+      "resource_type": "aws_iam_policy",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\IAM-01\\fail\\case1_json_inline_admin.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "IAM policy statement allows full unrestricted administrative access ('Action': '*' on 'Resource': '*').",
+      "cis_controls": [
+        "1.16"
+      ],
+      "aws_controls": [
+        "[IAM.1]"
+      ]
+    },
+    {
+      "rule_id": "IAM-01",
+      "rule_title": "IAM policy document allows Action: \"*\" on Resource: \"*\"",
+      "severity": "CRITICAL",
+      "resource_address": "aws_iam_policy.read_only",
+      "resource_type": "aws_iam_policy",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\IAM-01\\pass\\case1_scoped_actions.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "IAM policy does not allow full wildcard administrative permissions ('*' on '*').",
+      "cis_controls": [
+        "1.16"
+      ],
+      "aws_controls": [
+        "[IAM.1]"
+      ]
+    },
+    {
+      "rule_id": "IAM-01",
+      "rule_title": "IAM policy document allows Action: \"*\" on Resource: \"*\"",
+      "severity": "CRITICAL",
+      "resource_address": "aws_iam_policy.bucket_admin",
+      "resource_type": "aws_iam_policy",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\IAM-01\\pass\\case2_scoped_resources.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "IAM policy does not allow full wildcard administrative permissions ('*' on '*').",
+      "cis_controls": [
+        "1.16"
+      ],
+      "aws_controls": [
+        "[IAM.1]"
+      ]
+    },
+    {
+      "rule_id": "IAM-01",
+      "rule_title": "IAM policy document allows Action: \"*\" on Resource: \"*\"",
+      "severity": "CRITICAL",
+      "resource_address": "aws_iam_policy.deny_all",
+      "resource_type": "aws_iam_policy",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\IAM-01\\pass\\case3_effect_deny.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "IAM policy does not allow full wildcard administrative permissions ('*' on '*').",
+      "cis_controls": [
+        "1.16"
+      ],
+      "aws_controls": [
+        "[IAM.1]"
+      ]
+    },
+    {
+      "rule_id": "IAM-01",
+      "rule_title": "IAM policy document allows Action: \"*\" on Resource: \"*\"",
+      "severity": "CRITICAL",
+      "resource_address": "aws_iam_policy.dynamic_policy",
+      "resource_type": "aws_iam_policy",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\IAM-01\\unknown\\case1_policy_variable.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "IAM policy document expression cannot be resolved statically.",
+      "cis_controls": [
+        "1.16"
+      ],
+      "aws_controls": [
+        "[IAM.1]"
+      ]
+    },
+    {
+      "rule_id": "IAM-01",
+      "rule_title": "IAM policy document allows Action: \"*\" on Resource: \"*\"",
+      "severity": "CRITICAL",
+      "resource_address": "aws_iam_policy.templated_policy",
+      "resource_type": "aws_iam_policy",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\IAM-01\\unknown\\case2_template_file.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "IAM policy document expression cannot be resolved statically.",
+      "cis_controls": [
+        "1.16"
+      ],
+      "aws_controls": [
+        "[IAM.1]"
+      ]
+    },
+    {
+      "rule_id": "IAM-01",
+      "rule_title": "IAM policy document allows Action: \"*\" on Resource: \"*\"",
+      "severity": "CRITICAL",
+      "resource_address": "aws_iam_role_policy.role_admin",
+      "resource_type": "aws_iam_role_policy",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\IAM-01\\fail\\case2_heredoc_policy.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "IAM policy statement allows full unrestricted administrative access ('Action': '*' on 'Resource': '*').",
+      "cis_controls": [
+        "1.16"
+      ],
+      "aws_controls": [
+        "[IAM.1]"
+      ]
+    },
+    {
+      "rule_id": "IAM-01",
+      "rule_title": "IAM policy document allows Action: \"*\" on Resource: \"*\"",
+      "severity": "CRITICAL",
+      "resource_address": "aws_iam_user_policy.user_admin",
+      "resource_type": "aws_iam_user_policy",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\IAM-01\\fail\\case3_action_list_star.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "IAM policy statement allows full unrestricted administrative access ('Action': '*' on 'Resource': '*').",
+      "cis_controls": [
+        "1.16"
+      ],
+      "aws_controls": [
+        "[IAM.1]"
+      ]
+    },
+    {
+      "rule_id": "KMS-01",
+      "rule_title": "KMS key has enable_key_rotation false or missing",
+      "severity": "MEDIUM",
+      "resource_address": "aws_kms_key.key",
+      "resource_type": "aws_kms_key",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\KMS-01\\fail\\case1_explicit_false.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "KMS key enable_key_rotation is configured as 'False' instead of true.",
+      "cis_controls": [
+        "2.4.1"
+      ],
+      "aws_controls": [
+        "[KMS.4]"
+      ]
+    },
+    {
+      "rule_id": "KMS-01",
+      "rule_title": "KMS key has enable_key_rotation false or missing",
+      "severity": "MEDIUM",
+      "resource_address": "aws_kms_key.key",
+      "resource_type": "aws_kms_key",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\KMS-01\\fail\\case2_omitted_missing.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "KMS key has enable_key_rotation omitted or missing (defaults to disabled).",
+      "cis_controls": [
+        "2.4.1"
+      ],
+      "aws_controls": [
+        "[KMS.4]"
+      ]
+    },
+    {
+      "rule_id": "KMS-01",
+      "rule_title": "KMS key has enable_key_rotation false or missing",
+      "severity": "MEDIUM",
+      "resource_address": "aws_kms_key.key",
+      "resource_type": "aws_kms_key",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\KMS-01\\fail\\case3_resolved_default_false.tf",
+      "line_number": 6,
+      "status": "FAIL",
+      "message": "KMS key enable_key_rotation is configured as 'False' instead of true.",
+      "cis_controls": [
+        "2.4.1"
+      ],
+      "aws_controls": [
+        "[KMS.4]"
+      ]
+    },
+    {
+      "rule_id": "KMS-01",
+      "rule_title": "KMS key has enable_key_rotation false or missing",
+      "severity": "MEDIUM",
+      "resource_address": "aws_kms_key.key",
+      "resource_type": "aws_kms_key",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\KMS-01\\pass\\case1_explicit_true.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "KMS key automatic key rotation is enabled.",
+      "cis_controls": [
+        "2.4.1"
+      ],
+      "aws_controls": [
+        "[KMS.4]"
+      ]
+    },
+    {
+      "rule_id": "KMS-01",
+      "rule_title": "KMS key has enable_key_rotation false or missing",
+      "severity": "MEDIUM",
+      "resource_address": "aws_kms_key.key",
+      "resource_type": "aws_kms_key",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\KMS-01\\pass\\case2_resolved_default_true.tf",
+      "line_number": 6,
+      "status": "FAIL",
+      "message": "KMS key enable_key_rotation is configured as 'False' instead of true.",
+      "cis_controls": [
+        "2.4.1"
+      ],
+      "aws_controls": [
+        "[KMS.4]"
+      ]
+    },
+    {
+      "rule_id": "KMS-01",
+      "rule_title": "KMS key has enable_key_rotation false or missing",
+      "severity": "MEDIUM",
+      "resource_address": "aws_kms_key.key",
+      "resource_type": "aws_kms_key",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\KMS-01\\pass\\case3_rotation_period.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "KMS key automatic key rotation is enabled.",
+      "cis_controls": [
+        "2.4.1"
+      ],
+      "aws_controls": [
+        "[KMS.4]"
+      ]
+    },
+    {
+      "rule_id": "KMS-01",
+      "rule_title": "KMS key has enable_key_rotation false or missing",
+      "severity": "MEDIUM",
+      "resource_address": "aws_kms_key.key",
+      "resource_type": "aws_kms_key",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\KMS-01\\unknown\\case1_unresolved_rotation.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "KMS key enable_key_rotation expression cannot be resolved statically.",
+      "cis_controls": [
+        "2.4.1"
+      ],
+      "aws_controls": [
+        "[KMS.4]"
+      ]
+    },
+    {
+      "rule_id": "KMS-01",
+      "rule_title": "KMS key has enable_key_rotation false or missing",
+      "severity": "MEDIUM",
+      "resource_address": "aws_kms_key.key",
+      "resource_type": "aws_kms_key",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\KMS-01\\unknown\\case2_module_kms_rotation.tf",
+      "line_number": 1,
+      "status": "UNKNOWN",
+      "message": "KMS key enable_key_rotation expression cannot be resolved statically.",
+      "cis_controls": [
+        "2.4.1"
+      ],
+      "aws_controls": [
+        "[KMS.4]"
+      ]
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "provider.aws",
+      "resource_type": "provider.aws",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\fail\\case1_provider_access_key.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "Hard-coded secret literal found in argument(s): access_key, secret_key.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "provider.aws",
+      "resource_type": "provider.aws",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\pass\\case1_provider_no_keys.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "provider.aws",
+      "resource_type": "provider.aws",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\pass\\case3_secrets_manager_ref.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\fail\\case1_explicit_true.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\fail\\case2_resolved_default_true.tf",
+      "line_number": 6,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\fail\\case3_expression_true.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\pass\\case1_explicit_false.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\pass\\case2_omitted_default_false.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\pass\\case3_resolved_default_false.tf",
+      "line_number": 6,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\unknown\\case1_unresolved_var.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-01\\unknown\\case2_data_source.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\fail\\case1_explicit_false.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\fail\\case2_omitted_missing.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\fail\\case3_resolved_default_false.tf",
+      "line_number": 6,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\pass\\case1_explicit_true.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\pass\\case2_with_kms_key.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\pass\\case3_resolved_default_true.tf",
+      "line_number": 6,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\unknown\\case1_unresolved_var.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\RDS-02\\unknown\\case2_module_output.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\fail\\case2_db_literal_password.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "Hard-coded secret literal found in argument(s): password.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\fail\\case3_resolved_default_password.tf",
+      "line_number": 6,
+      "status": "FAIL",
+      "message": "Hard-coded secret literal found in argument(s): password.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\pass\\case2_var_no_default.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "No hard-coded secret literals detected in resource arguments.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\unknown\\case1_unresolved_var_password.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "Secret argument 'password' expression cannot be statically resolved.",
+      "cis_controls": [],
+      "aws_controls": []
+    },
+    {
+      "rule_id": "SEC-01",
+      "rule_title": "Hard-coded secret-like literals in provider or resource arguments",
+      "severity": "HIGH",
+      "resource_address": "aws_db_instance.db",
+      "resource_type": "aws_db_instance",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\fixtures\\SEC-01\\unknown\\case2_vault_secret.tf",
+      "line_number": 5,
+      "status": "UNKNOWN",
+      "message": "Secret argument 'password' expression cannot be statically resolved.",
+      "cis_controls": [],
+      "aws_controls": []
+    }
+  ]
+}

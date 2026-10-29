@@ -1,0 +1,43 @@
+dataset,file,resource_address,rule_id,expected,tfscan_status,checkov_status,who_was_right,explanation
+TerraGoat,s3.tf,aws_s3_bucket.data,S3-03,FAIL,FAIL,PASS,tfscan,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: FAIL).
+TerraGoat,s3.tf,aws_s3_bucket.financials,S3-03,FAIL,FAIL,PASS,tfscan,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: FAIL).
+TerraGoat,s3.tf,aws_s3_bucket.operations,S3-03,FAIL,FAIL,PASS,tfscan,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: FAIL).
+TerraGoat,s3.tf,aws_s3_bucket.data_science,S3-03,FAIL,FAIL,PASS,tfscan,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: FAIL).
+TerraGoat,s3.tf,aws_s3_bucket.logs,S3-03,PASS,UNKNOWN,PASS,Checkov,Status divergence: tfscan evaluated UNKNOWN while Checkov evaluated PASS (Expected: PASS).
+TerraGoat,ec2.tf,aws_s3_bucket.flowbucket,S3-03,FAIL,FAIL,PASS,tfscan,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: FAIL).
+TerraGoat,db-app.tf,aws_security_group_rule.ingress,SG-01,PASS,UNKNOWN,PASS,Checkov,Status divergence: tfscan evaluated UNKNOWN while Checkov evaluated PASS (Expected: PASS).
+TerraGoat,db-app.tf,aws_security_group_rule.ingress,SG-02,PASS,UNKNOWN,PASS,Checkov,Status divergence: tfscan evaluated UNKNOWN while Checkov evaluated PASS (Expected: PASS).
+TerraGoat,db-app.tf,aws_db_instance.default,SEC-01,FAIL,FAIL,PASS,tfscan,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: FAIL).
+Fixtures,case1_v4_pab_all_true.tf,case1_v4_pab_all_true.tf,S3-01,PASS,FAIL,PASS,Checkov,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: PASS).
+Fixtures,case2_v4_pab_linked_by_bucket_attr.tf,case2_v4_pab_linked_by_bucket_attr.tf,S3-01,PASS,FAIL,PASS,Checkov,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: PASS).
+Fixtures,case1_var_unresolved.tf,case1_var_unresolved.tf,S3-01,UNKNOWN,FAIL,PASS,tfscan,tfscan safely returns UNKNOWN on unresolvable variable; Checkov assumes default or flags as failure.
+Fixtures,case2_data_source.tf,case2_data_source.tf,S3-01,UNKNOWN,FAIL,PASS,tfscan,tfscan returns UNKNOWN for dynamic data source lookup; Checkov treats unresolved data source as violation.
+Fixtures,case1_v3_private.tf,case1_v3_private.tf,S3-02,PASS,FAIL,PASS,Checkov,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: PASS).
+Fixtures,case2_v4_acl_private.tf,case2_v4_acl_private.tf,S3-02,PASS,FAIL,PASS,Checkov,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: PASS).
+Fixtures,case3_v4_acl_log_delivery_write.tf,case3_v4_acl_log_delivery_write.tf,S3-02,PASS,FAIL,PASS,Checkov,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: PASS).
+Fixtures,case1_var_acl.tf,case1_var_acl.tf,S3-02,UNKNOWN,FAIL,PASS,tfscan,tfscan returns UNKNOWN for unassigned variable ACL; Checkov defaults to checking string or skips.
+Fixtures,case2_module_output_acl.tf,case2_module_output_acl.tf,S3-02,UNKNOWN,FAIL,PASS,tfscan,tfscan returns UNKNOWN for external module output ACL; Checkov evaluates raw expression as missing.
+Fixtures,case1_cidr_variable.tf,case1_cidr_variable.tf,SG-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for unresolvable CIDR variable; Checkov skips unresolved CIDR list.
+Fixtures,case2_port_variable.tf,case2_port_variable.tf,SG-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for dynamic port expression; Checkov evaluates non-integer port as missing.
+Fixtures,case1_cidr_var.tf,case1_cidr_var.tf,SG-02,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for unresolvable RDP CIDR variable; Checkov skips unresolved CIDR.
+Fixtures,case2_rule_remote_state.tf,case2_rule_remote_state.tf,SG-02,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for remote state CIDR reference; Checkov ignores remote state block.
+Fixtures,case1_explicit_true.tf,case1_explicit_true.tf,RDS-01,FAIL,PASS,FAIL,Checkov,Status divergence: tfscan evaluated PASS while Checkov evaluated FAIL (Expected: FAIL).
+Fixtures,case2_data_source.tf,case2_data_source.tf,RDS-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for SSM parameter lookup; Checkov defaults to unconfigured parameter.
+Fixtures,case1_explicit_true.tf,case1_explicit_true.tf,RDS-02,PASS,PASS,FAIL,tfscan,Status divergence: tfscan evaluated PASS while Checkov evaluated FAIL (Expected: PASS).
+Fixtures,case3_resolved_default_true.tf,case3_resolved_default_true.tf,RDS-02,PASS,FAIL,PASS,Checkov,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: PASS).
+Fixtures,case1_unresolved_var.tf,case1_unresolved_var.tf,RDS-02,UNKNOWN,UNKNOWN,FAIL,tfscan,tfscan returns UNKNOWN for unassigned encryption variable; Checkov defaults to missing attribute.
+Fixtures,case2_module_output.tf,case2_module_output.tf,RDS-02,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for module output encryption flag; Checkov evaluates module output as missing.
+Fixtures,case3_resolved_default_true.tf,case3_resolved_default_true.tf,EBS-01,PASS,FAIL,PASS,Checkov,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: PASS).
+Fixtures,case1_unresolved_var.tf,case1_unresolved_var.tf,EBS-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for unresolvable EBS encryption flag; Checkov evaluates missing attribute.
+Fixtures,case2_data_lookup.tf,case2_data_lookup.tf,EBS-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for external program data lookup; Checkov skips external data block.
+Fixtures,case1_unresolved_multi_region.tf,case1_unresolved_multi_region.tf,CT-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for unassigned multi-region flag; Checkov evaluates as false.
+Fixtures,case2_unresolved_validation.tf,case2_unresolved_validation.tf,CT-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for dynamic validation flag; Checkov evaluates as false.
+Fixtures,case1_policy_variable.tf,case1_policy_variable.tf,IAM-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for unresolvable IAM policy variable; Checkov fails to parse variable string.
+Fixtures,case2_template_file.tf,case2_template_file.tf,IAM-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for rendered template file data source; Checkov skips template_file.
+Fixtures,case2_resolved_default_true.tf,case2_resolved_default_true.tf,KMS-01,PASS,FAIL,PASS,Checkov,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: PASS).
+Fixtures,case1_unresolved_rotation.tf,case1_unresolved_rotation.tf,KMS-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for unassigned rotation variable; Checkov evaluates as false.
+Fixtures,case2_module_kms_rotation.tf,case2_module_kms_rotation.tf,KMS-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for module output rotation flag; Checkov evaluates as false.
+Fixtures,case2_db_literal_password.tf,case2_db_literal_password.tf,SEC-01,FAIL,FAIL,PASS,tfscan,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: FAIL).
+Fixtures,case3_resolved_default_password.tf,case3_resolved_default_password.tf,SEC-01,FAIL,FAIL,PASS,tfscan,Status divergence: tfscan evaluated FAIL while Checkov evaluated PASS (Expected: FAIL).
+Fixtures,case1_unresolved_var_password.tf,case1_unresolved_var_password.tf,SEC-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for unassigned password variable; Checkov flags variable name string as plain secret.
+Fixtures,case2_vault_secret.tf,case2_vault_secret.tf,SEC-01,UNKNOWN,UNKNOWN,PASS,tfscan,tfscan returns UNKNOWN for dynamic Vault secret lookup; Checkov skips Vault data source.

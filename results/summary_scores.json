@@ -1,0 +1,416 @@
+{
+  "per_rule_scores": {
+    "CT-01": {
+      "tfscan": {
+        "TP": 3,
+        "FP": 0,
+        "TN": 3,
+        "FN": 0,
+        "UNKNOWN": 2,
+        "total": 8,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "unknown_rate": 0.25
+      },
+      "checkov": {
+        "TP": 3,
+        "FP": 0,
+        "TN": 3,
+        "FN": 0,
+        "UNKNOWN": 0,
+        "total": 8,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "unknown_rate": 0.0
+      }
+    },
+    "EBS-01": {
+      "tfscan": {
+        "TP": 4,
+        "FP": 1,
+        "TN": 2,
+        "FN": 0,
+        "UNKNOWN": 2,
+        "total": 9,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.8889,
+        "unknown_rate": 0.2222
+      },
+      "checkov": {
+        "TP": 4,
+        "FP": 0,
+        "TN": 3,
+        "FN": 0,
+        "UNKNOWN": 0,
+        "total": 9,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "unknown_rate": 0.0
+      }
+    },
+    "IAM-01": {
+      "tfscan": {
+        "TP": 3,
+        "FP": 0,
+        "TN": 5,
+        "FN": 0,
+        "UNKNOWN": 2,
+        "total": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "unknown_rate": 0.2
+      },
+      "checkov": {
+        "TP": 3,
+        "FP": 0,
+        "TN": 5,
+        "FN": 0,
+        "UNKNOWN": 0,
+        "total": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "unknown_rate": 0.0
+      }
+    },
+    "KMS-01": {
+      "tfscan": {
+        "TP": 4,
+        "FP": 1,
+        "TN": 2,
+        "FN": 0,
+        "UNKNOWN": 2,
+        "total": 9,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.8889,
+        "unknown_rate": 0.2222
+      },
+      "checkov": {
+        "TP": 4,
+        "FP": 0,
+        "TN": 3,
+        "FN": 0,
+        "UNKNOWN": 0,
+        "total": 9,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "unknown_rate": 0.0
+      }
+    },
+    "RDS-01": {
+      "tfscan": {
+        "TP": 3,
+        "FP": 0,
+        "TN": 3,
+        "FN": 1,
+        "UNKNOWN": 1,
+        "total": 9,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "unknown_rate": 0.1111
+      },
+      "checkov": {
+        "TP": 4,
+        "FP": 0,
+        "TN": 3,
+        "FN": 0,
+        "UNKNOWN": 0,
+        "total": 9,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "unknown_rate": 0.0
+      }
+    },
+    "RDS-02": {
+      "tfscan": {
+        "TP": 4,
+        "FP": 1,
+        "TN": 2,
+        "FN": 0,
+        "UNKNOWN": 2,
+        "total": 9,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.8889,
+        "unknown_rate": 0.2222
+      },
+      "checkov": {
+        "TP": 4,
+        "FP": 1,
+        "TN": 2,
+        "FN": 0,
+        "UNKNOWN": 0,
+        "total": 9,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.8889,
+        "unknown_rate": 0.0
+      }
+    },
+    "S3-01": {
+      "tfscan": {
+        "TP": 9,
+        "FP": 3,
+        "TN": 0,
+        "FN": 0,
+        "UNKNOWN": 0,
+        "total": 14,
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571,
+        "unknown_rate": 0.0
+      },
+      "checkov": {
+        "TP": 9,
+        "FP": 1,
+        "TN": 2,
+        "FN": 0,
+        "UNKNOWN": 0,
+        "total": 14,
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1": 0.9474,
+        "unknown_rate": 0.0
+      }
+    },
+    "S3-02": {
+      "tfscan": {
+        "TP": 3,
+        "FP": 3,
+        "TN": 6,
+        "FN": 0,
+        "UNKNOWN": 0,
+        "total": 14,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6667,
+        "unknown_rate": 0.0
+      },
+      "checkov": {
+        "TP": 3,
+        "FP": 0,
+        "TN": 9,
+        "FN": 0,
+        "UNKNOWN": 0,
+        "total": 14,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "unknown_rate": 0.0
+      }
+    },
+    "S3-03": {
+      "tfscan": {
+        "TP": 5,
+        "FP": 0,
+        "TN": 4,
+        "FN": 3,
+        "UNKNOWN": 1,
+        "total": 14,
+        "precision": 1.0,
+        "recall": 0.625,
+        "f1": 0.7692,
+        "unknown_rate": 0.0714
+      },
+      "checkov": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 4,
+        "FN": 8,
+        "UNKNOWN": 0,
+        "total": 14,
+        "precision": 1.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "unknown_rate": 0.0
+      }
+    },
+    "SEC-01": {
+      "tfscan": {
+        "TP": 5,
+        "FP": 1,
+        "TN": 3,
+        "FN": 0,
+        "UNKNOWN": 2,
+        "total": 11,
+        "precision": 0.8333,
+        "recall": 1.0,
+        "f1": 0.9091,
+        "unknown_rate": 0.1818
+      },
+      "checkov": {
+        "TP": 2,
+        "FP": 1,
+        "TN": 3,
+        "FN": 3,
+        "UNKNOWN": 0,
+        "total": 11,
+        "precision": 0.6667,
+        "recall": 0.4,
+        "f1": 0.5,
+        "unknown_rate": 0.0
+      }
+    },
+    "SG-01": {
+      "tfscan": {
+        "TP": 4,
+        "FP": 0,
+        "TN": 5,
+        "FN": 0,
+        "UNKNOWN": 3,
+        "total": 11,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "unknown_rate": 0.2727
+      },
+      "checkov": {
+        "TP": 4,
+        "FP": 0,
+        "TN": 5,
+        "FN": 0,
+        "UNKNOWN": 0,
+        "total": 11,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "unknown_rate": 0.0
+      }
+    },
+    "SG-02": {
+      "tfscan": {
+        "TP": 3,
+        "FP": 0,
+        "TN": 6,
+        "FN": 0,
+        "UNKNOWN": 3,
+        "total": 11,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "unknown_rate": 0.2727
+      },
+      "checkov": {
+        "TP": 3,
+        "FP": 0,
+        "TN": 6,
+        "FN": 0,
+        "UNKNOWN": 0,
+        "total": 11,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "unknown_rate": 0.0
+      }
+    }
+  },
+  "aggregate": {
+    "tfscan": {
+      "TP": 50,
+      "FP": 10,
+      "TN": 41,
+      "FN": 4,
+      "UNKNOWN": 20,
+      "total": 129,
+      "precision": 0.8333,
+      "recall": 0.9259,
+      "f1": 0.8772,
+      "unknown_rate": 0.155
+    },
+    "checkov": {
+      "TP": 43,
+      "FP": 3,
+      "TN": 48,
+      "FN": 11,
+      "UNKNOWN": 0,
+      "total": 129,
+      "precision": 0.9348,
+      "recall": 0.7963,
+      "f1": 0.86,
+      "unknown_rate": 0.0
+    }
+  },
+  "dataset_aggregates": {
+    "fixtures": {
+      "tfscan": {
+        "TP": 32,
+        "FP": 9,
+        "TN": 27,
+        "FN": 4,
+        "UNKNOWN": 17,
+        "total": 96,
+        "precision": 0.7805,
+        "recall": 0.8889,
+        "f1": 0.8312,
+        "unknown_rate": 0.1771
+      },
+      "checkov": {
+        "TP": 31,
+        "FP": 2,
+        "TN": 34,
+        "FN": 5,
+        "UNKNOWN": 0,
+        "total": 96,
+        "precision": 0.9394,
+        "recall": 0.8611,
+        "f1": 0.8986,
+        "unknown_rate": 0.0
+      }
+    },
+    "terragoat": {
+      "tfscan": {
+        "TP": 18,
+        "FP": 1,
+        "TN": 14,
+        "FN": 0,
+        "UNKNOWN": 3,
+        "total": 33,
+        "precision": 0.9474,
+        "recall": 1.0,
+        "f1": 0.973,
+        "unknown_rate": 0.0909
+      },
+      "checkov": {
+        "TP": 12,
+        "FP": 1,
+        "TN": 14,
+        "FN": 6,
+        "UNKNOWN": 0,
+        "total": 33,
+        "precision": 0.9231,
+        "recall": 0.6667,
+        "f1": 0.7742,
+        "unknown_rate": 0.0
+      }
+    }
+  },
+  "performance": {
+    "fixtures": {
+      "tfscan_duration_ms": 103.78,
+      "tfscan_resources": 20,
+      "tfscan_ms_per_100": 518.9,
+      "checkov_duration_ms": 9022.91,
+      "checkov_resources": 112,
+      "checkov_ms_per_100": 8056.17,
+      "speedup_factor": 86.9
+    },
+    "terragoat": {
+      "tfscan_duration_ms": 122.69,
+      "tfscan_resources": 17,
+      "tfscan_ms_per_100": 721.71,
+      "checkov_duration_ms": 9774.54,
+      "checkov_resources": 64,
+      "checkov_ms_per_100": 15272.72,
+      "speedup_factor": 79.7
+    }
+  }
+}
