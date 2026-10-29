@@ -1,0 +1,13 @@
+rule_id,rule_title,checkov_check_ids,checkov_titles,match_status
+S3-01,S3 bucket has no public access block with all four settings true,CKV2_AWS_6,Ensure that S3 bucket has a Public Access block,EXACT
+S3-02,S3 bucket ACL is public-read or public-read-write,"CKV_AWS_20,CKV_AWS_57","S3 Bucket has an ACL defined which allows public READ access.; S3 Bucket has an ACL defined which allows public WRITE access.",EXACT
+S3-03,S3 bucket has no explicit server-side encryption configuration,CKV_AWS_19,Ensure all data stored in the S3 bucket is securely encrypted at rest,EXACT
+SG-01,Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22,CKV_AWS_24,Ensure no security groups allow ingress from 0.0.0.0:0 to port 22,EXACT
+SG-02,Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389,CKV_AWS_25,Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389,EXACT
+RDS-01,RDS instance has publicly_accessible = true,CKV_AWS_17,Ensure all data stored in RDS is not publicly accessible,EXACT
+RDS-02,RDS instance has storage_encrypted false or missing,CKV_AWS_16,Ensure all data stored in the RDS is securely encrypted at rest,EXACT
+EBS-01,EBS volume has encrypted false or missing,CKV_AWS_3,Ensure all data stored in the EBS is securely encrypted,EXACT
+CT-01,CloudTrail trail is not multi-region or log file validation is off,"CKV_AWS_67,CKV_AWS_36","Ensure CloudTrail is enabled in all Regions; Ensure CloudTrail log file validation is enabled",EXACT
+IAM-01,"IAM policy document allows Action: ""*"" on Resource: ""*""",CKV_AWS_62,"Ensure IAM policies that allow full ""*-*"" administrative privileges are not created",EXACT
+KMS-01,KMS key has enable_key_rotation false or missing,CKV_AWS_7,Ensure rotation for customer created CMKs is enabled,EXACT
+SEC-01,Hard-coded secret-like literals in provider or resource arguments,CKV_AWS_41,Ensure no hard coded AWS access key and secret key exists in provider,EXACT
