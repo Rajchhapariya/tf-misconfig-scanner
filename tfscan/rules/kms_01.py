@@ -11,7 +11,7 @@ class KMS01KeyRotation(Rule):
     title = "KMS key has enable_key_rotation false or missing"
     severity = Severity.MEDIUM
     resource_types = ["aws_kms_key"]
-    cis_controls = ["2.4.1"]
+    cis_controls = ["3.6"]
     aws_controls = ["[KMS.4]"]
 
     def evaluate(self, resource: Resource, context: ScanContext) -> Finding:

@@ -19,21 +19,21 @@ Static Terraform security scanner for AWS infrastructure misconfigurations, feat
 
 ## 2. Rule Catalog & Control Mapping
 
-Every rule maps to official regulatory standards. Mappings are derived from official CIS AWS Foundations Benchmark v3.0.0 and AWS Foundational Security Best Practices (FSBP). For rules without an official control match (e.g. static secret heuristic), fields are left blank per audit integrity rules.
+Rules are mapped to CIS and AWS controls where a clear match exists. CIS numbers are for CIS AWS Foundations Benchmark v3.0.0. Security Hub control IDs come from the AWS Security Hub user guide pages for CIS v3.0.0 and the Foundational Security Best Practices standard. Sources and the lookup date are in `docs/CONTROL_SOURCES.md`. Where no clear official match exists the field is blank (S3-02 CIS, S3-03, EBS-01 CIS, SEC-01), because the nearest CIS items cover different things: 2.1.1 is the TLS-only bucket policy and 2.2.1 is the account-level EBS default encryption setting.
 
-| Rule ID | Rule Title | Severity | Target Resources | CIS Benchmark | AWS FSBP | Checkov ID |
+| Rule ID | Rule Title | Severity | Target Resources | CIS Benchmark | AWS Security Hub control | Checkov ID |
 |---|---|---|---|---|---|---|
-| **S3-01** | S3 bucket has no public access block with all four settings true | HIGH | `aws_s3_bucket`, `aws_s3_bucket_public_access_block` | CIS AWS v3.0.0 2.1.4, 2.1.5 | [S3.1] | CKV2_AWS_6 |
-| **S3-02** | S3 bucket ACL is `public-read` or `public-read-write` | HIGH | `aws_s3_bucket`, `aws_s3_bucket_acl` | CIS AWS v3.0.0 2.1.5 | [S3.2], [S3.3] | CKV_AWS_20, CKV_AWS_57 |
-| **S3-03** | S3 bucket has no explicit server-side encryption configuration | LOW | `aws_s3_bucket`, `aws_s3_bucket_server_side_encryption_configuration` | CIS AWS v3.0.0 2.1.1 | [S3.4] | CKV_AWS_19 |
-| **SG-01** | Security group allows ingress from `0.0.0.0/0` or `::/0` on port 22 | HIGH | `aws_security_group`, `aws_security_group_rule` | CIS AWS v3.0.0 5.2 | [EC2.13] | CKV_AWS_24 |
-| **SG-02** | Security group allows ingress from `0.0.0.0/0` or `::/0` on port 3389 | HIGH | `aws_security_group`, `aws_security_group_rule` | CIS AWS v3.0.0 5.3 | [EC2.14] | CKV_AWS_25 |
-| **RDS-01** | RDS instance has `publicly_accessible = true` | HIGH | `aws_db_instance` | CIS AWS v3.0.0 2.3.1 | [RDS.2] | CKV_AWS_17 |
-| **RDS-02** | RDS instance has `storage_encrypted` false or missing | HIGH | `aws_db_instance` | CIS AWS v3.0.0 2.3.2 | [RDS.3] | CKV_AWS_16 |
-| **EBS-01** | EBS volume has `encrypted` false or missing | HIGH | `aws_ebs_volume` | CIS AWS v3.0.0 2.2.1 | [EC2.3] | CKV_AWS_3 |
+| **S3-01** | S3 bucket has no public access block with all four settings true | HIGH | `aws_s3_bucket`, `aws_s3_bucket_public_access_block` | CIS AWS v3.0.0 2.1.4 | [S3.1] | CKV2_AWS_6 |
+| **S3-02** | S3 bucket ACL is `public-read` or `public-read-write` | HIGH | `aws_s3_bucket`, `aws_s3_bucket_acl` |  | [S3.2], [S3.3] | CKV_AWS_20, CKV_AWS_57 |
+| **S3-03** | S3 bucket has no explicit server-side encryption configuration | LOW | `aws_s3_bucket`, `aws_s3_bucket_server_side_encryption_configuration` |  |  | CKV_AWS_19 |
+| **SG-01** | Security group allows ingress from `0.0.0.0/0` or `::/0` on port 22 | HIGH | `aws_security_group`, `aws_security_group_rule` | CIS AWS v3.0.0 5.2, 5.3 | [EC2.53], [EC2.54] | CKV_AWS_24 |
+| **SG-02** | Security group allows ingress from `0.0.0.0/0` or `::/0` on port 3389 | HIGH | `aws_security_group`, `aws_security_group_rule` | CIS AWS v3.0.0 5.2, 5.3 | [EC2.53], [EC2.54] | CKV_AWS_25 |
+| **RDS-01** | RDS instance has `publicly_accessible = true` | HIGH | `aws_db_instance` | CIS AWS v3.0.0 2.3.3 | [RDS.2] | CKV_AWS_17 |
+| **RDS-02** | RDS instance has `storage_encrypted` false or missing | HIGH | `aws_db_instance` | CIS AWS v3.0.0 2.3.1 | [RDS.3] | CKV_AWS_16 |
+| **EBS-01** | EBS volume has `encrypted` false or missing | HIGH | `aws_ebs_volume` |  | [EC2.3] | CKV_AWS_3 |
 | **CT-01** | CloudTrail trail is not multi-region, or log file validation is off | HIGH | `aws_cloudtrail` | CIS AWS v3.0.0 3.1, 3.2 | [CloudTrail.1], [CloudTrail.4] | CKV_AWS_67, CKV_AWS_36 |
 | **IAM-01** | IAM policy document allows `Action: "*"` on `Resource: "*"` | CRITICAL | `aws_iam_policy`, `aws_iam_role_policy`, `aws_iam_user_policy`, `aws_iam_group_policy` | CIS AWS v3.0.0 1.16 | [IAM.1] | CKV_AWS_62 |
-| **KMS-01** | KMS key has `enable_key_rotation` false or missing | MEDIUM | `aws_kms_key` | CIS AWS v3.0.0 2.4.1 | [KMS.4] | CKV_AWS_7 |
+| **KMS-01** | KMS key has `enable_key_rotation` false or missing | MEDIUM | `aws_kms_key` | CIS AWS v3.0.0 3.6 | [KMS.4] | CKV_AWS_7 |
 | **SEC-01** | Hard-coded secret literals in provider or resource arguments | HIGH | `provider.aws`, resource arguments (`password`, `access_key`, `secret_key`) |  |  | CKV_AWS_41 |
 
 Full control source definitions are recorded in [`docs/CONTROL_SOURCES.md`](file:///c:/Users/Rajch/Desktop/Research/tf-misconfig-scanner/docs/CONTROL_SOURCES.md). Checkov policy cross-references are documented in [`docs/checkov_mapping.csv`](file:///c:/Users/Rajch/Desktop/Research/tf-misconfig-scanner/docs/checkov_mapping.csv).
@@ -116,8 +116,8 @@ Read these caveats first.
 
 | Dataset | Resources | tfscan engine | tfscan CLI wall | Checkov wall | tfscan CLI ms/100 res | Checkov ms/100 res | Wall-time ratio |
 |---|---|---|---|---|---|---|---|
-| Fixtures (one directory per fixture for tfscan) | 102 | 99 ms | 168 ms | 5035 ms | 165 | 4936 | 29.9x |
-| TerraGoat AWS | 17 | 77 ms | 182 ms | 2221 ms | 1068 | 13064 | 12.2x |
+| Fixtures (one directory per fixture for tfscan) | 102 | 3567 ms | 2405 ms | 14537 ms | 2358 | 14252 | 6.0x |
+| TerraGoat AWS | 17 | 240 ms | 623 ms | 2490 ms | 3664 | 14644 | 4.0x |
 
 ### F1 per rule
 

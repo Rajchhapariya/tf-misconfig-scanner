@@ -15,7 +15,7 @@ class S303ExplicitEncryption(Rule):
     title = "S3 bucket has no explicit server-side encryption configuration"
     severity = Severity.LOW
     resource_types = ["aws_s3_bucket"]
-    cis_controls = ["2.1.1"]
+    cis_controls = []
     aws_controls = ["[S3.4]"]
 
     def evaluate(self, resource: Resource, context: ScanContext) -> Finding:

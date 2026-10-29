@@ -11,7 +11,7 @@ class RDS02StorageEncrypted(Rule):
     title = "RDS instance has storage_encrypted false or missing"
     severity = Severity.HIGH
     resource_types = ["aws_db_instance"]
-    cis_controls = ["2.3.2"]
+    cis_controls = ["2.3.1"]
     aws_controls = ["[RDS.3]"]
 
     def evaluate(self, resource: Resource, context: ScanContext) -> Finding:

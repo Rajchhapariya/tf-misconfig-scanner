@@ -9,7 +9,7 @@ In accordance with project governance standards, all control identifiers are ext
 ## 1. Reference Standards and Document Versions
 
 1. **CIS Amazon Web Services Foundations Benchmark**
-   - **Version:** v3.0.0 (Published May 2023) / v1.4.0 (Published May 2021)
+   - **Version:** v3.0.0 and v1.4.0 (publication dates not confirmed from the sources used)
    - **Publisher:** Center for Internet Security (CIS)
    - **Scope:** Consensus-based security configuration baselines for Amazon Web Services accounts and resources.
 
@@ -27,21 +27,31 @@ In accordance with project governance standards, all control identifiers are ext
 
 ## 2. Rule Control Mapping Matrix
 
-| Rule ID | Rule Title | Resource Types | CIS AWS v1.4.0 | CIS AWS v3.0.0 | AWS FSBP Control ID | Checkov Check ID |
-|---|---|---|---|---|---|---|
-| S3-01 | S3 bucket has no public access block with all four settings true | `aws_s3_bucket`, `aws_s3_bucket_public_access_block` | 2.1.4, 2.1.5 | 2.1.4, 2.1.5 | [S3.1] | CKV2_AWS_6 |
-| S3-02 | S3 bucket ACL is `public-read` or `public-read-write` | `aws_s3_bucket`, `aws_s3_bucket_acl` | 2.1.5 | 2.1.5 | [S3.2], [S3.3] | CKV_AWS_20, CKV_AWS_57 |
-| S3-03 | S3 bucket has no explicit server-side encryption configuration | `aws_s3_bucket`, `aws_s3_bucket_server_side_encryption_configuration` | 2.1.1 | 2.1.1 | [S3.4] | CKV_AWS_19 |
-| SG-01 | Security group allows ingress from `0.0.0.0/0` or `::/0` on port 22 | `aws_security_group`, `aws_security_group_rule` | 5.2 | 5.2 | [EC2.13] | CKV_AWS_24 |
-| SG-02 | Security group allows ingress from `0.0.0.0/0` or `::/0` on port 3389 | `aws_security_group`, `aws_security_group_rule` | 5.3 | 5.3 | [EC2.14] | CKV_AWS_25 |
-| RDS-01 | RDS instance has `publicly_accessible = true` | `aws_db_instance` | 2.3.1 | 2.3.1 | [RDS.2] | CKV_AWS_17 |
-| RDS-02 | RDS instance has `storage_encrypted` false or missing | `aws_db_instance` | 2.3.2 | 2.3.2 | [RDS.3] | CKV_AWS_16 |
-| EBS-01 | EBS volume has `encrypted` false or missing | `aws_ebs_volume` | 2.2.1 | 2.2.1 | [EC2.3] | CKV_AWS_3 |
-| CT-01 | CloudTrail trail is not multi-region, or log file validation is off | `aws_cloudtrail` | 3.1, 3.2 | 3.1, 3.2 | [CloudTrail.1], [CloudTrail.4] | CKV_AWS_67, CKV_AWS_36 |
-| IAM-01 | IAM policy document allows `Action: "*"` on `Resource: "*"` | `aws_iam_policy`, `aws_iam_policy_document`, `aws_iam_role_policy`, `aws_iam_user_policy`, `aws_iam_group_policy` | 1.16 | 1.16 | [IAM.1] | CKV_AWS_62 |
-| KMS-01 | KMS key has `enable_key_rotation` false or missing | `aws_kms_key` | 2.4.1 | 2.4.1 | [KMS.4] | CKV_AWS_7 |
-| SEC-01 | Hard-coded secret-like literals in provider or resource arguments | `provider.aws`, all resource configurations |  |  |  | CKV_AWS_41 |
+Looked up on 30 October 2026 in the AWS Security Hub user guide pages "CIS AWS Foundations Benchmark" (requirement to control tables for v1.4.0 and v3.0.0) and "AWS Foundational Security Best Practices standard", plus the requirement titles in Prowler's `cis_3.0_aws.json`. The CIS Benchmark PDF itself was not read (it needs a CIS account), so a CIS number is recorded only when one of these sources ties it to the same check. Security Hub IDs are AWS control IDs.
 
+| Rule ID | Resource Types | CIS AWS v1.4.0 | CIS AWS v3.0.0 | Security Hub control | Checkov Check ID |
+|---|---|---|---|---|---|
+| S3-01 | `aws_s3_bucket`, `aws_s3_bucket_public_access_block` | 2.1.5 | 2.1.4 | S3.1 | CKV2_AWS_6 |
+| S3-02 | `aws_s3_bucket`, `aws_s3_bucket_acl` |  |  | S3.2, S3.3 | CKV_AWS_20, CKV_AWS_57 |
+| S3-03 | `aws_s3_bucket`, `aws_s3_bucket_server_side_encryption_configuration` |  |  |  | CKV_AWS_19 |
+| SG-01 | `aws_security_group`, `aws_security_group_rule` |  | 5.2, 5.3 | EC2.53, EC2.54 | CKV_AWS_24 |
+| SG-02 | `aws_security_group`, `aws_security_group_rule` |  | 5.2, 5.3 | EC2.53, EC2.54 | CKV_AWS_25 |
+| RDS-01 | `aws_db_instance` |  | 2.3.3 | RDS.2 | CKV_AWS_17 |
+| RDS-02 | `aws_db_instance` | 2.3.1 | 2.3.1 | RDS.3 | CKV_AWS_16 |
+| EBS-01 | `aws_ebs_volume` |  |  | EC2.3 | CKV_AWS_3 |
+| CT-01 | `aws_cloudtrail` | 3.1, 3.2 | 3.1, 3.2 | CloudTrail.1, CloudTrail.4 | CKV_AWS_67, CKV_AWS_36 |
+| IAM-01 | `aws_iam_policy`, `aws_iam_role_policy`, `aws_iam_user_policy`, `aws_iam_group_policy` | 1.16 | 1.16 | IAM.1 | CKV_AWS_62 |
+| KMS-01 | `aws_kms_key` | 3.8 | 3.6 | KMS.4 | CKV_AWS_7 |
+| SEC-01 | `provider.aws`, resource arguments |  |  |  | CKV_AWS_41 |
+
+Blank cells mean no clear match was found in the sources above. The earlier version of this table had wrong CIS numbers; corrections made on 30 October 2026:
+- S3-03: CIS v3.0.0 2.1.1 is "S3 bucket policy denies HTTP requests", not encryption. No encryption control was confirmed on the FSBP page, so the field stays blank.
+- EBS-01: CIS v3.0.0 2.2.1 (Security Hub EC2.7) is the account-level EBS default encryption setting, not the `encrypted` argument on a volume, so it is not recorded. EC2.3 ("Attached EBS volumes should be encrypted at-rest") is the closest match.
+- RDS-01: CIS v3.0.0 2.3.3 is RDS public access. It has no row in the Security Hub v1.4.0 table.
+- RDS-02: 2.3.1 is RDS encryption at rest in both versions. The earlier value 2.3.2 is automatic minor version upgrade.
+- KMS-01: key rotation is 3.6 in v3.0.0 and 3.8 in v1.4.0. The earlier value 2.4.1 is the EFS encryption item.
+- SG-01 and SG-02: v3.0.0 5.2 (IPv4) and 5.3 (IPv6) each cover remote administration ports, so both rules map to both. The Security Hub v1.4.0 table has a gap at 5.2, so no v1.4.0 value is recorded. EC2.13 and EC2.14 were not found on the FSBP page and are dropped; EC2.53 and EC2.54 are the documented controls.
+- S3-02: the CIS items for public access (2.1.4 and 2.1.5) are about the public access block setting, not ACL values, so no CIS number is recorded.
 ---
 
 ## 3. Implementation Specifics & Architectural Notes

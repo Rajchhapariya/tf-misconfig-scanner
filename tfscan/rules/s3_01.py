@@ -12,7 +12,7 @@ class S301PublicAccessBlock(Rule):
     title = "S3 bucket has no public access block with all four settings true"
     severity = Severity.HIGH
     resource_types = ["aws_s3_bucket"]
-    cis_controls = ["2.1.4", "2.1.5"]
+    cis_controls = ["2.1.4"]
     aws_controls = ["[S3.1]"]
 
     FOUR_SETTINGS = [

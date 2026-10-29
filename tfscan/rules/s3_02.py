@@ -12,7 +12,7 @@ class S302PublicAcl(Rule):
     title = "S3 bucket ACL is public-read or public-read-write"
     severity = Severity.HIGH
     resource_types = ["aws_s3_bucket"]
-    cis_controls = ["2.1.5"]
+    cis_controls = []
     aws_controls = ["[S3.2]", "[S3.3]"]
 
     PUBLIC_ACLS = {"public-read", "public-read-write"}

@@ -11,7 +11,7 @@ class RDS01PubliclyAccessible(Rule):
     title = "RDS instance has publicly_accessible = true"
     severity = Severity.HIGH
     resource_types = ["aws_db_instance"]
-    cis_controls = ["2.3.1"]
+    cis_controls = ["2.3.3"]
     aws_controls = ["[RDS.2]"]
 
     def evaluate(self, resource: Resource, context: ScanContext) -> Finding:

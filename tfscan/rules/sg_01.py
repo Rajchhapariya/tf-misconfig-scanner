@@ -14,7 +14,7 @@ class SG01SshIngress(Rule):
     title = "Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22"
     severity = Severity.HIGH
     resource_types = ["aws_security_group", "aws_security_group_rule"]
-    cis_controls = ["5.2"]
+    cis_controls = ["5.2", "5.3"]
     aws_controls = ["[EC2.13]"]
 
     TARGET_PORT = 22

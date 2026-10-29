@@ -11,7 +11,7 @@ class EBS01Encrypted(Rule):
     title = "EBS volume has encrypted false or missing"
     severity = Severity.HIGH
     resource_types = ["aws_ebs_volume"]
-    cis_controls = ["2.2.1"]
+    cis_controls = []
     aws_controls = ["[EC2.3]"]
 
     def evaluate(self, resource: Resource, context: ScanContext) -> Finding:
