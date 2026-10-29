@@ -1,0 +1,35 @@
+file,resource_address,rule_id,expected,note
+s3.tf,aws_s3_bucket.data,S3-01,FAIL,No public access block resource or inline configuration defined
+s3.tf,aws_s3_bucket.financials,S3-01,FAIL,No public access block resource or inline configuration defined
+s3.tf,aws_s3_bucket.operations,S3-01,FAIL,No public access block resource or inline configuration defined
+s3.tf,aws_s3_bucket.data_science,S3-01,FAIL,No public access block resource or inline configuration defined
+s3.tf,aws_s3_bucket.logs,S3-01,FAIL,No public access block resource or inline configuration defined
+ec2.tf,aws_s3_bucket.flowbucket,S3-01,FAIL,No public access block resource or inline configuration defined
+s3.tf,aws_s3_bucket.data,S3-02,PASS,No public ACL declared (defaults to private)
+s3.tf,aws_s3_bucket.financials,S3-02,PASS,Explicit acl = 'private'
+s3.tf,aws_s3_bucket.operations,S3-02,PASS,Explicit acl = 'private'
+s3.tf,aws_s3_bucket.data_science,S3-02,PASS,Explicit acl = 'private'
+s3.tf,aws_s3_bucket.logs,S3-02,PASS,Explicit acl = 'log-delivery-write' (not public)
+ec2.tf,aws_s3_bucket.flowbucket,S3-02,PASS,No public ACL declared
+s3.tf,aws_s3_bucket.data,S3-03,FAIL,No server_side_encryption_configuration block present
+s3.tf,aws_s3_bucket.financials,S3-03,FAIL,No server_side_encryption_configuration block present
+s3.tf,aws_s3_bucket.operations,S3-03,FAIL,No server_side_encryption_configuration block present
+s3.tf,aws_s3_bucket.data_science,S3-03,FAIL,No server_side_encryption_configuration block present
+s3.tf,aws_s3_bucket.logs,S3-03,PASS,Explicit server_side_encryption_configuration with aws:kms
+ec2.tf,aws_s3_bucket.flowbucket,S3-03,FAIL,No server_side_encryption_configuration block present
+db-app.tf,aws_security_group.default,SG-01,PASS,No ingress rule allowing port 22 from 0.0.0.0/0
+db-app.tf,aws_security_group_rule.ingress,SG-01,PASS,"Rule restricts to port 3306 from VPC CIDR, not port 22"
+ec2.tf,aws_security_group.web-node,SG-01,FAIL,Inline ingress block allows 0.0.0.0/0 on port 22
+db-app.tf,aws_security_group.default,SG-02,PASS,No ingress rule allowing port 3389 from 0.0.0.0/0
+db-app.tf,aws_security_group_rule.ingress,SG-02,PASS,"Rule restricts to port 3306 from VPC CIDR, not port 3389"
+ec2.tf,aws_security_group.web-node,SG-02,PASS,"Ingress rules allow port 80 and 22, but port 3389 is not allowed"
+db-app.tf,aws_db_instance.default,RDS-01,FAIL,Explicitly configured with publicly_accessible = true
+db-app.tf,aws_db_instance.default,RDS-02,FAIL,Explicitly configured with storage_encrypted = false
+ec2.tf,aws_ebs_volume.web_host_storage,EBS-01,FAIL,encrypted argument is commented out and missing
+ec2.tf,aws_flow_log.vpcflowlogs,CT-01,N/A,VPC flow log is not an aws_cloudtrail resource
+db-app.tf,aws_iam_role_policy.ec2policy,IAM-01,PASS,"Actions are scoped to ['s3:*', 'ec2:*', 'rds:*'], not full wildcard '*'"
+iam.tf,aws_iam_user_policy.userpolicy,IAM-01,PASS,"Actions are scoped to ['ec2:*', 's3:*', 'lambda:*', 'cloudwatch:*'], not full wildcard '*'"
+kms.tf,aws_kms_key.logs_key,KMS-01,FAIL,enable_key_rotation attribute is omitted (defaults to false)
+providers.tf,provider.aws.plain_text_access_keys_provider,SEC-01,FAIL,Hardcoded access_key and secret_key in provider block
+providers.tf,provider.aws.default,SEC-01,PASS,No hardcoded credentials; references variables
+db-app.tf,aws_db_instance.default,SEC-01,FAIL,Password resolves from variable default value 'Aa1234321Bb'
