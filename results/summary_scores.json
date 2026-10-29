@@ -617,21 +617,21 @@
   "performance": {
     "fixtures": {
       "resources": 102,
-      "tfscan_engine_ms": 98.63,
-      "tfscan_cli_wall_ms": 168.11,
-      "checkov_wall_ms": 5034.78,
-      "tfscan_cli_ms_per_100": 164.8,
-      "checkov_ms_per_100": 4936.1,
-      "wall_ratio": 29.9
+      "tfscan_engine_ms": 3567.2,
+      "tfscan_cli_wall_ms": 2405.14,
+      "checkov_wall_ms": 14536.88,
+      "tfscan_cli_ms_per_100": 2358.0,
+      "checkov_ms_per_100": 14251.8,
+      "wall_ratio": 6.0
     },
     "terragoat": {
       "resources": 17,
-      "tfscan_engine_ms": 77.34,
-      "tfscan_cli_wall_ms": 181.52,
-      "checkov_wall_ms": 2220.88,
-      "tfscan_cli_ms_per_100": 1067.8,
-      "checkov_ms_per_100": 13064.0,
-      "wall_ratio": 12.2
+      "tfscan_engine_ms": 239.63,
+      "tfscan_cli_wall_ms": 622.87,
+      "checkov_wall_ms": 2489.52,
+      "tfscan_cli_ms_per_100": 3663.9,
+      "checkov_ms_per_100": 14644.2,
+      "wall_ratio": 4.0
     }
   },
   "item_rows": [

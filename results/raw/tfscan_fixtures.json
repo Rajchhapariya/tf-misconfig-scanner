@@ -3627,6 +3627,6 @@
     }
   ],
   "resources_evaluated": 102,
-  "scan_duration_ms": 98.63,
-  "cli_wall_ms": 168.11
+  "scan_duration_ms": 3567.2,
+  "cli_wall_ms": 2405.14
 }

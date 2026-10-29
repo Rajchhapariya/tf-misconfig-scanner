@@ -50,7 +50,7 @@ Can a small static scanner for 12 AWS rules, which returns UNKNOWN instead of gu
 
 On the items with a definite label, tfscan scored precision 100.0% and recall 100.0%; Checkov scored 97.7% and 79.6% (all 12 rules). Without S3-03, Checkov recall is 93.5%. On TerraGoat alone tfscan scored 100.0% recall and Checkov 66.7%. Of 24 items labelled unknowable, tfscan answered UNKNOWN on 24; Checkov gave a definite FAIL or PASS on 8.
 
-Timing (wall clock, includes process start-up): fixtures, tfscan CLI 168 ms against Checkov 5035 ms; TerraGoat AWS, 182 ms against 2221 ms. Much of the gap is start-up cost, so it should not be read as a per-resource speed ratio.
+Timing (wall clock, includes process start-up): fixtures, tfscan CLI 2405 ms against Checkov 14537 ms; TerraGoat AWS, 623 ms against 2490 ms. Much of the gap is start-up cost, so it should not be read as a per-resource speed ratio.
 
 == 4. Disagreements
 

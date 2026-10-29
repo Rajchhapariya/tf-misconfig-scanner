@@ -19,5 +19,5 @@
 
 | Dataset | Resources | tfscan engine | tfscan CLI wall | Checkov wall | tfscan CLI ms/100 res | Checkov ms/100 res | Wall-time ratio |
 |---|---|---|---|---|---|---|---|
-| Fixtures (one directory per fixture for tfscan) | 102 | 99 ms | 168 ms | 5035 ms | 165 | 4936 | 29.9x |
-| TerraGoat AWS | 17 | 77 ms | 182 ms | 2221 ms | 1068 | 13064 | 12.2x |
+| Fixtures (one directory per fixture for tfscan) | 102 | 3567 ms | 2405 ms | 14537 ms | 2358 | 14252 | 6.0x |
+| TerraGoat AWS | 17 | 240 ms | 623 ms | 2490 ms | 3664 | 14644 | 4.0x |
