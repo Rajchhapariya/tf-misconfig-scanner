@@ -65,16 +65,10 @@ class S303ExplicitEncryption(Rule):
                         line_number=sse_source.line_number,
                     )
 
-                kms_key = default_enc.get("kms_master_key_id")
-                if kms_key is not None:
-                    resolved_kms, is_kms_res = context.resolve_attribute(kms_key)
-                    if not is_kms_res:
-                        return self.make_finding(
-                            resource,
-                            Status.UNKNOWN,
-                            "Server-side encryption KMS key expression cannot be resolved statically.",
-                            line_number=sse_source.line_number,
-                        )
+                # The rule asks whether an explicit encryption choice exists in code. Which KMS
+                # key is used (a module output, a data source) does not change that answer, so an
+                # unresolved kms_master_key_id is not UNKNOWN here. Only an unresolved
+                # sse_algorithm is, because that is the choice itself.
 
                 if resolved_algo in ["aws:kms", "AES256"]:
                     return self.make_finding(

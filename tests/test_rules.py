@@ -1,6 +1,6 @@
 """
 Integration tests evaluating each rule against hand-crafted test fixtures.
-Verifies that all 96 fixtures across all 12 rules produce expected status:
+Verifies that all 97 fixtures across all 12 rules produce expected status:
 - fail/* -> FAIL
 - pass/* -> PASS
 - unknown/* -> UNKNOWN

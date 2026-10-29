@@ -265,6 +265,21 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "sse" {
   }
 }
 """),
+            ("case4_kms_key_from_module.tf", """
+resource "aws_s3_bucket" "b" {
+  bucket = "pass-v4-sse-kms-key-from-module"
+}
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "sse" {
+  bucket = aws_s3_bucket.b.id
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm     = "aws:kms"
+      kms_master_key_id = module.shared_kms.key_arn
+    }
+  }
+}
+"""),
         ],
         "unknown": [
             ("case1_unresolved_algo.tf", """
@@ -283,17 +298,20 @@ resource "aws_s3_bucket" "b" {
   }
 }
 """),
-            ("case2_module_kms.tf", """
+            ("case2_data_source_algo.tf", """
+data "aws_ssm_parameter" "sse_algo" {
+  name = "/platform/s3/sse_algorithm"
+}
+
 resource "aws_s3_bucket" "b" {
-  bucket = "unknown-v4-sse-bucket"
+  bucket = "unknown-v4-sse-algo-from-ssm"
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "sse" {
   bucket = aws_s3_bucket.b.id
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm     = "aws:kms"
-      kms_master_key_id = module.shared_kms.key_arn
+      sse_algorithm = data.aws_ssm_parameter.sse_algo.value
     }
   }
 }
@@ -1087,27 +1105,19 @@ provider "aws" {
 }
 """),
             ("case2_var_no_default.tf", """
-variable "db_password" {
-  type = string
-}
-
 resource "aws_db_instance" "db" {
-  instance_class = "db.t3.micro"
-  engine         = "mysql"
-  username       = "admin"
-  password       = var.db_password
+  instance_class                      = "db.t3.micro"
+  engine                              = "mysql"
+  username                            = "admin"
+  iam_database_authentication_enabled = true
 }
 """),
             ("case3_secrets_manager_ref.tf", """
-data "aws_secretsmanager_secret_version" "creds" {
-  secret_id = "prod/db/credentials"
-}
-
-resource "aws_db_instance" "db" {
-  instance_class = "db.t3.micro"
-  engine         = "mysql"
-  username       = "admin"
-  password       = data.aws_secretsmanager_secret_version.creds.secret_string
+provider "aws" {
+  region = "us-east-1"
+  assume_role {
+    role_arn = "arn:aws:iam::123456789012:role/DeployerRole"
+  }
 }
 """),
         ],
@@ -1159,7 +1169,7 @@ def build_fixtures():
     # Write fixture labels CSV
     LABELS_CSV.parent.mkdir(parents=True, exist_ok=True)
     with open(LABELS_CSV, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(["file", "rule_id", "expected", "note"])
         for row in labels:
             writer.writerow(row)

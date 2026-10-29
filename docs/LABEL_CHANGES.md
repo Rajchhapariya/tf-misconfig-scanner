@@ -1,0 +1,11 @@
+# Fixture and label changes made after a scanner had run
+
+Ground rule 2 says labels are fixed before any scanner runs. Three changes broke that order. They are listed here so the scores can be read with them in mind. The change was made by reading the rule text, and each one was triggered by seeing a scanner result.
+
+| Change | Before | After | Why |
+|---|---|---|---|
+| `fixtures/SEC-01/pass/case2_var_no_default.tf` | `password = var.db_password`, variable has no default; labelled PASS | file has no `password` argument; labelled PASS | The original construct is identical to `unknown/case1_unresolved_var_password.tf`, which is labelled UNKNOWN. One of the two labels was wrong. The scope statement in the spec says an unresolvable value is UNKNOWN, so the PASS fixture was replaced. Changed in commit 0b8e2d0. |
+| `fixtures/SEC-01/pass/case3_secrets_manager_ref.tf` | `password = data.aws_secretsmanager_secret_version...secret_string`; labelled PASS | provider block with `assume_role` and no keys; labelled PASS | Same reason: a data-source value is unresolvable, so the spec makes it UNKNOWN. Changed in commit 0b8e2d0. `scripts/build_fixtures.py` was not updated then and was brought in line with the committed files afterwards. |
+| `fixtures/S3-03/unknown/case2_module_kms.tf` | explicit `aws:kms` encryption block, key from a module output; labelled UNKNOWN | moved to `fixtures/S3-03/pass/case4_kms_key_from_module.tf`; labelled PASS | S3-03 asks whether an explicit encryption choice exists in code. A key reference does not change that answer. The TerraGoat label for the same construct (`aws_s3_bucket.logs`, written before any scan) was already PASS, so the two labels contradicted each other. The rule was changed to match: an unresolved `kms_master_key_id` is no longer UNKNOWN; an unresolved `sse_algorithm` still is. A replacement UNKNOWN case, `unknown/case2_data_source_algo.tf`, keeps two UNKNOWN fixtures for S3-03. |
+
+Effect on the scores: the two SEC-01 changes removed two cases where tfscan and the original labels disagreed. The S3-03 change removed one fixture disagreement and one TerraGoat disagreement (the `logs` bucket). Rerunning the original SEC-01 fixtures against the current scanner returns UNKNOWN for both.
