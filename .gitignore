@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Environments
+.venv/
+venv/
+ENV/
+
+# TerraGoat clone (per spec: do not copy into repo)
+terragoat/
+data/terragoat/
+external/
+
+# Scan caches and temp files
+.checkov/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
