@@ -2484,6 +2484,59 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.b",
       "resource_type": "aws_s3_bucket",
+      "file_path": "fixtures/S3-03/pass/case4_kms_key_from_module.tf",
+      "line_number": 1,
+      "status": "FAIL",
+      "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
+      "cis_controls": [
+        "2.1.4",
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.1]"
+      ]
+    },
+    {
+      "rule_id": "S3-02",
+      "rule_title": "S3 bucket ACL is public-read or public-read-write",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "fixtures/S3-03/pass/case4_kms_key_from_module.tf",
+      "line_number": 1,
+      "status": "PASS",
+      "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
+      "cis_controls": [
+        "2.1.5"
+      ],
+      "aws_controls": [
+        "[S3.2]",
+        "[S3.3]"
+      ]
+    },
+    {
+      "rule_id": "S3-03",
+      "rule_title": "S3 bucket has no explicit server-side encryption configuration",
+      "severity": "LOW",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
+      "file_path": "fixtures/S3-03/pass/case4_kms_key_from_module.tf",
+      "line_number": 5,
+      "status": "PASS",
+      "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
+      "cis_controls": [
+        "2.1.1"
+      ],
+      "aws_controls": [
+        "[S3.4]"
+      ]
+    },
+    {
+      "rule_id": "S3-01",
+      "rule_title": "S3 bucket has no public access block with all four settings true",
+      "severity": "HIGH",
+      "resource_address": "aws_s3_bucket.b",
+      "resource_type": "aws_s3_bucket",
       "file_path": "fixtures/S3-03/unknown/case1_unresolved_algo.tf",
       "line_number": 5,
       "status": "FAIL",
@@ -2537,8 +2590,8 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.b",
       "resource_type": "aws_s3_bucket",
-      "file_path": "fixtures/S3-03/unknown/case2_module_kms.tf",
-      "line_number": 1,
+      "file_path": "fixtures/S3-03/unknown/case2_data_source_algo.tf",
+      "line_number": 5,
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
@@ -2555,8 +2608,8 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.b",
       "resource_type": "aws_s3_bucket",
-      "file_path": "fixtures/S3-03/unknown/case2_module_kms.tf",
-      "line_number": 1,
+      "file_path": "fixtures/S3-03/unknown/case2_data_source_algo.tf",
+      "line_number": 5,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
       "cis_controls": [
@@ -2573,10 +2626,10 @@
       "severity": "LOW",
       "resource_address": "aws_s3_bucket.b",
       "resource_type": "aws_s3_bucket",
-      "file_path": "fixtures/S3-03/unknown/case2_module_kms.tf",
-      "line_number": 5,
+      "file_path": "fixtures/S3-03/unknown/case2_data_source_algo.tf",
+      "line_number": 9,
       "status": "UNKNOWN",
-      "message": "Server-side encryption KMS key expression cannot be resolved statically.",
+      "message": "Server-side encryption algorithm expression cannot be resolved statically.",
       "cis_controls": [
         "2.1.1"
       ],
@@ -2593,7 +2646,7 @@
       "file_path": "fixtures/SEC-01/fail/case1_provider_access_key.tf",
       "line_number": 1,
       "status": "FAIL",
-      "message": "Hard-coded secret literal found in argument(s): secret_key, access_key.",
+      "message": "Hard-coded secret literal found in argument(s): access_key, secret_key.",
       "cis_controls": [],
       "aws_controls": []
     },
@@ -3573,7 +3626,7 @@
       ]
     }
   ],
-  "resources_evaluated": 101,
-  "scan_duration_ms": 104.37,
-  "cli_wall_ms": 179.91
+  "resources_evaluated": 102,
+  "scan_duration_ms": 98.63,
+  "cli_wall_ms": 168.11
 }

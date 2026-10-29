@@ -18,3 +18,18 @@ All benchmarks and scans documented in this repository were executed in this env
 - Tool execution was isolated to local static file analysis without remote cloud credential dependencies.
 - Static scans parse HCL definitions directly into AST structures using `python-hcl2`.
 - Variable interpolation resolves deterministic values from `default` attributes and `.tfvars` definitions; dynamic expressions and unresolved references evaluate strictly to `UNKNOWN`.
+
+## Latest regeneration of the results
+
+The scan results, scores, figure, README results block and report in the current commit were regenerated in this environment. The table above describes the earlier Windows run, which produced the previous commit's results. Wall times differ between environments, so compare timings only within one run.
+
+| Component | Specification / Version |
+|---|---|
+| Operating System | Linux-6.8.0-138-generic-x86_64-with-glibc2.35 (Linux VM, no GPU) |
+| CPU | 13th Gen Intel(R) Core(TM) i7-13620H |
+| RAM | 3915 MB |
+| Python Runtime | 3.10.12 |
+| Checkov Version | 3.4.0 |
+| python-hcl2 | 8.1.4 |
+| Terraform Binary | not installed in this run (not needed for static scans) |
+| Typst | python package typst 0.15.0 |

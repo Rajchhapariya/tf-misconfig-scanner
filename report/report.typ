@@ -9,7 +9,7 @@ Raj Chhapariya. All figures below are generated from saved scan results by `eval
 
 == 1. Question and method
 
-Can a small static scanner for 12 AWS rules, which returns UNKNOWN instead of guessing when a value cannot be resolved, match Checkov on a hand-labelled set? Ground-truth labels were established by manual code review prior to running either scanner to eliminate label contamination from scanner outputs. The sets are 101 fixture resources written for this project, and 33 scored items on TerraGoat (AWS folder, pinned commit). Each fixture is scanned in its own directory, so one fixture cannot affect another. Results are keyed by full path and resource address. A mapped Checkov check that did not run on an item is counted as a miss, not as a pass.
+Can a small static scanner for 12 AWS rules, which returns UNKNOWN instead of guessing when a value cannot be resolved, match Checkov on a hand-labelled set? Ground-truth labels were written by reading the code before either scanner ran. Three later changes to fixtures and labels are listed in docs/LABEL_CHANGES.md. The sets are 102 fixture resources written for this project, and 33 scored items on TerraGoat (AWS folder, pinned commit). Each fixture is scanned in its own directory, so one fixture cannot affect another. Results are keyed by full path and resource address. A mapped Checkov check that did not run on an item is counted as a miss, not as a pass.
 
 == 2. Caveats
 
@@ -34,27 +34,27 @@ Can a small static scanner for 12 AWS rules, which returns UNKNOWN instead of gu
   [RDS-02], [7], [100.0%], [100.0%], [1.000], [22.2%], [100.0%], [100.0%], [1.000], [2],
   [S3-01], [12], [100.0%], [100.0%], [1.000], [14.3%], [90.0%], [100.0%], [0.947], [2],
   [S3-02], [12], [100.0%], [100.0%], [1.000], [14.3%], [100.0%], [100.0%], [1.000], [2],
-  [S3-03], [12], [100.0%], [100.0%], [1.000], [21.4%], [n/a], [0.0%], [n/a], [1],
+  [S3-03], [13], [100.0%], [100.0%], [1.000], [13.3%], [n/a], [0.0%], [n/a], [2],
   [SEC-01], [9], [100.0%], [100.0%], [1.000], [18.2%], [100.0%], [40.0%], [0.571], [6],
   [SG-01], [9], [100.0%], [100.0%], [1.000], [18.2%], [100.0%], [100.0%], [1.000], [0],
   [SG-02], [9], [100.0%], [100.0%], [1.000], [18.2%], [100.0%], [100.0%], [1.000], [0],
-  [All 12], [105], [100.0%], [100.0%], [1.000], [19.4%], [97.7%], [79.6%], [0.878], [19],
+  [All 12], [106], [100.0%], [100.0%], [1.000], [18.5%], [97.7%], [79.6%], [0.878], [20],
   [All but S3-03], [93], [100.0%], [100.0%], [1.000], [19.1%], [97.7%], [93.5%], [0.956], [18],
-  [Fixtures], [72], [100.0%], [100.0%], [1.000], [25.0%], [96.9%], [86.1%], [0.912], [18],
-  [TerraGoat], [33], [100.0%], [100.0%], [1.000], [3.0%], [100.0%], [66.7%], [0.800], [1],
+  [Fixtures], [73], [100.0%], [100.0%], [1.000], [24.7%], [96.9%], [86.1%], [0.912], [19],
+  [TerraGoat], [33], [100.0%], [100.0%], [1.000], [0.0%], [100.0%], [66.7%], [0.800], [1],
   ),
   caption: [Precision, recall, F1 against hand labels. UNKNOWN-labelled items are excluded from P and R.],
 )
 
 #figure(image("../results/figures/f1_comparison.png", width: 90%), caption: [F1 per rule. ALL\* excludes S3-03.])
 
-On the items with a definite label, tfscan scored precision 100.0% and recall 100.0%; Checkov scored 97.7% and 79.6% (all 12 rules). Without S3-03, Checkov recall is 93.5%. On TerraGoat alone tfscan scored 100.0% recall and Checkov 66.7%. Of 24 items labelled unknowable, tfscan answered UNKNOWN on 24; Checkov gave a definite FAIL or PASS on 9.
+On the items with a definite label, tfscan scored precision 100.0% and recall 100.0%; Checkov scored 97.7% and 79.6% (all 12 rules). Without S3-03, Checkov recall is 93.5%. On TerraGoat alone tfscan scored 100.0% recall and Checkov 66.7%. Of 24 items labelled unknowable, tfscan answered UNKNOWN on 24; Checkov gave a definite FAIL or PASS on 8.
 
-Timing (wall clock, includes process start-up): fixtures, tfscan CLI 180 ms against Checkov 5465 ms; TerraGoat AWS, 240 ms against 2533 ms. Much of the gap is start-up cost, so it should not be read as a per-resource speed ratio.
+Timing (wall clock, includes process start-up): fixtures, tfscan CLI 168 ms against Checkov 5035 ms; TerraGoat AWS, 182 ms against 2221 ms. Much of the gap is start-up cost, so it should not be read as a per-resource speed ratio.
 
 == 4. Disagreements
 
-23 labelled items got different verdicts. tfscan matched the label on 13, Checkov on 1, and 9 were unknowable items. Per-item notes are in `docs/disagreement_notes.csv` and the README.
+21 labelled items got different verdicts. tfscan matched the label on 13, Checkov on 0, and 8 were unknowable items. Per-item notes are in `docs/disagreement_notes.csv` and the README.
 
 #figure(
   table(
@@ -65,7 +65,6 @@ Timing (wall clock, includes process start-up): fixtures, tfscan CLI 180 ms agai
   [Fi: case1\_v3\_no\_sse.tf], [S3-03], [FAIL], [FAIL], [PASS], [tfscan],
   [Fi: case2\_v4\_no\_sse.tf], [S3-03], [FAIL], [FAIL], [PASS], [tfscan],
   [Fi: case3\_v4\_unrelated\_resource.tf], [S3-03], [FAIL], [FAIL], [PASS], [tfscan],
-  [Fi: case2\_module\_kms.tf], [S3-03], [UNKNOWN], [UNKNOWN], [PASS], [n/a (unknowable)],
   [Fi: case1\_cidr\_variable.tf], [SG-01], [UNKNOWN], [UNKNOWN], [PASS], [n/a (unknowable)],
   [Fi: case2\_port\_variable.tf], [SG-01], [UNKNOWN], [UNKNOWN], [PASS], [n/a (unknowable)],
   [Fi: case1\_cidr\_var.tf], [SG-02], [UNKNOWN], [UNKNOWN], [PASS], [n/a (unknowable)],
@@ -81,7 +80,6 @@ Timing (wall clock, includes process start-up): fixtures, tfscan CLI 180 ms agai
   [Te: s3.tf aws\_s3\_bucket.financials], [S3-03], [FAIL], [FAIL], [PASS], [tfscan],
   [Te: s3.tf aws\_s3\_bucket.operations], [S3-03], [FAIL], [FAIL], [PASS], [tfscan],
   [Te: s3.tf aws\_s3\_bucket.data\_science], [S3-03], [FAIL], [FAIL], [PASS], [tfscan],
-  [Te: s3.tf aws\_s3\_bucket.logs], [S3-03], [PASS], [UNKNOWN], [PASS], [checkov],
   [Te: ec2.tf aws\_s3\_bucket.flowbucket], [S3-03], [FAIL], [FAIL], [PASS], [tfscan],
   [Te: db-app.tf aws\_db\_instance.default], [SEC-01], [FAIL], [FAIL], [NO\_CHECK], [tfscan],
   ),

@@ -308,11 +308,11 @@
       "tfscan": {
         "TP": 8,
         "FP": 0,
-        "TN": 4,
+        "TN": 5,
         "FN": 0,
-        "labelled": 14,
-        "scored": 12,
-        "unknown_returned": 3,
+        "labelled": 15,
+        "scored": 13,
+        "unknown_returned": 2,
         "no_result": 0,
         "unknowable_items": 2,
         "correct_unknown": 2,
@@ -321,21 +321,21 @@
         "precision": 1.0,
         "recall": 1.0,
         "f1": 1.0,
-        "unknown_rate": 0.2143
+        "unknown_rate": 0.1333
       },
       "checkov": {
         "TP": 0,
         "FP": 0,
-        "TN": 4,
+        "TN": 5,
         "FN": 8,
-        "labelled": 14,
-        "scored": 12,
+        "labelled": 15,
+        "scored": 13,
         "unknown_returned": 0,
-        "no_result": 1,
+        "no_result": 2,
         "unknowable_items": 2,
         "correct_unknown": 0,
-        "overconfident": 1,
-        "abstained": 1,
+        "overconfident": 0,
+        "abstained": 2,
         "precision": null,
         "recall": 0.0,
         "f1": null,
@@ -461,11 +461,11 @@
     "tfscan": {
       "TP": 54,
       "FP": 0,
-      "TN": 51,
+      "TN": 52,
       "FN": 0,
-      "labelled": 129,
-      "scored": 105,
-      "unknown_returned": 25,
+      "labelled": 130,
+      "scored": 106,
+      "unknown_returned": 24,
       "no_result": 0,
       "unknowable_items": 24,
       "correct_unknown": 24,
@@ -474,21 +474,21 @@
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "unknown_rate": 0.1938
+      "unknown_rate": 0.1846
     },
     "checkov": {
       "TP": 43,
       "FP": 1,
-      "TN": 50,
+      "TN": 51,
       "FN": 11,
-      "labelled": 129,
-      "scored": 105,
+      "labelled": 130,
+      "scored": 106,
       "unknown_returned": 0,
-      "no_result": 19,
+      "no_result": 20,
       "unknowable_items": 24,
       "correct_unknown": 0,
-      "overconfident": 9,
-      "abstained": 15,
+      "overconfident": 8,
+      "abstained": 16,
       "precision": 0.9773,
       "recall": 0.7963,
       "f1": 0.8776,
@@ -541,10 +541,10 @@
       "tfscan": {
         "TP": 36,
         "FP": 0,
-        "TN": 36,
+        "TN": 37,
         "FN": 0,
-        "labelled": 96,
-        "scored": 72,
+        "labelled": 97,
+        "scored": 73,
         "unknown_returned": 24,
         "no_result": 0,
         "unknowable_items": 24,
@@ -554,21 +554,21 @@
         "precision": 1.0,
         "recall": 1.0,
         "f1": 1.0,
-        "unknown_rate": 0.25
+        "unknown_rate": 0.2474
       },
       "checkov": {
         "TP": 31,
         "FP": 1,
-        "TN": 35,
+        "TN": 36,
         "FN": 5,
-        "labelled": 96,
-        "scored": 72,
+        "labelled": 97,
+        "scored": 73,
         "unknown_returned": 0,
-        "no_result": 18,
+        "no_result": 19,
         "unknowable_items": 24,
         "correct_unknown": 0,
-        "overconfident": 9,
-        "abstained": 15,
+        "overconfident": 8,
+        "abstained": 16,
         "precision": 0.9688,
         "recall": 0.8611,
         "f1": 0.9118,
@@ -583,7 +583,7 @@
         "FN": 0,
         "labelled": 33,
         "scored": 33,
-        "unknown_returned": 1,
+        "unknown_returned": 0,
         "no_result": 0,
         "unknowable_items": 0,
         "correct_unknown": 0,
@@ -592,7 +592,7 @@
         "precision": 1.0,
         "recall": 1.0,
         "f1": 1.0,
-        "unknown_rate": 0.0303
+        "unknown_rate": 0.0
       },
       "checkov": {
         "TP": 12,
@@ -616,22 +616,22 @@
   },
   "performance": {
     "fixtures": {
-      "resources": 101,
-      "tfscan_engine_ms": 104.37,
-      "tfscan_cli_wall_ms": 179.91,
-      "checkov_wall_ms": 5464.97,
-      "tfscan_cli_ms_per_100": 178.1,
-      "checkov_ms_per_100": 5410.9,
-      "wall_ratio": 30.4
+      "resources": 102,
+      "tfscan_engine_ms": 98.63,
+      "tfscan_cli_wall_ms": 168.11,
+      "checkov_wall_ms": 5034.78,
+      "tfscan_cli_ms_per_100": 164.8,
+      "checkov_ms_per_100": 4936.1,
+      "wall_ratio": 29.9
     },
     "terragoat": {
       "resources": 17,
-      "tfscan_engine_ms": 94.93,
-      "tfscan_cli_wall_ms": 240.38,
-      "checkov_wall_ms": 2532.97,
-      "tfscan_cli_ms_per_100": 1414.0,
-      "checkov_ms_per_100": 14899.8,
-      "wall_ratio": 10.5
+      "tfscan_engine_ms": 77.34,
+      "tfscan_cli_wall_ms": 181.52,
+      "checkov_wall_ms": 2220.88,
+      "tfscan_cli_ms_per_100": 1067.8,
+      "checkov_ms_per_100": 13064.0,
+      "wall_ratio": 12.2
     }
   },
   "item_rows": [
@@ -835,6 +835,15 @@
     },
     {
       "dataset": "Fixtures",
+      "file": "fixtures/S3-03/pass/case4_kms_key_from_module.tf",
+      "resource_address": "",
+      "rule_id": "S3-03",
+      "expected": "PASS",
+      "tfscan": "PASS",
+      "checkov": "PASS"
+    },
+    {
+      "dataset": "Fixtures",
       "file": "fixtures/S3-03/unknown/case1_unresolved_algo.tf",
       "resource_address": "",
       "rule_id": "S3-03",
@@ -844,12 +853,12 @@
     },
     {
       "dataset": "Fixtures",
-      "file": "fixtures/S3-03/unknown/case2_module_kms.tf",
+      "file": "fixtures/S3-03/unknown/case2_data_source_algo.tf",
       "resource_address": "",
       "rule_id": "S3-03",
       "expected": "UNKNOWN",
       "tfscan": "UNKNOWN",
-      "checkov": "PASS"
+      "checkov": "NO_CHECK"
     },
     {
       "dataset": "Fixtures",
@@ -1649,7 +1658,7 @@
       "resource_address": "aws_s3_bucket.logs",
       "rule_id": "S3-03",
       "expected": "PASS",
-      "tfscan": "UNKNOWN",
+      "tfscan": "PASS",
       "checkov": "PASS"
     },
     {

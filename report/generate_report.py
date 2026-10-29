@@ -66,7 +66,7 @@ Raj Chhapariya. All figures below are generated from saved scan results by `eval
 
 == 1. Question and method
 
-Can a small static scanner for 12 AWS rules, which returns UNKNOWN instead of guessing when a value cannot be resolved, match Checkov on a hand-labelled set? Ground-truth labels were established by manual code review prior to running either scanner to eliminate label contamination from scanner outputs. The sets are {fx["resources"]} fixture resources written for this project, and {tgs} scored items on TerraGoat (AWS folder, pinned commit). Each fixture is scanned in its own directory, so one fixture cannot affect another. Results are keyed by full path and resource address. A mapped Checkov check that did not run on an item is counted as a miss, not as a pass.
+Can a small static scanner for 12 AWS rules, which returns UNKNOWN instead of guessing when a value cannot be resolved, match Checkov on a hand-labelled set? Ground-truth labels were written by reading the code before either scanner ran. Three later changes to fixtures and labels are listed in docs/LABEL_CHANGES.md. The sets are {fx["resources"]} fixture resources written for this project, and {tgs} scored items on TerraGoat (AWS folder, pinned commit). Each fixture is scanned in its own directory, so one fixture cannot affect another. Results are keyed by full path and resource address. A mapped Checkov check that did not run on an item is counted as a miss, not as a pass.
 
 == 2. Caveats
 
