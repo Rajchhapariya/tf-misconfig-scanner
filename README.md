@@ -68,15 +68,16 @@ tfscan scan ./terraform/aws --format sarif --output results/scan.sarif
 To prevent evaluation bias, all ground-truth labels were assigned by reading source code before running any scanner.
 
 1. **Hand-Written Fixtures (`fixtures/`):**
-   - 96 distinct `.tf` configurations across all 12 rules.
+   - 97 distinct `.tf` configurations across all 12 rules.
    - Contains >= 3 FAIL cases, >= 3 PASS cases, and >= 2 UNKNOWN cases per rule.
    - Tests both AWS provider v3 and v4+ styles, variable substitution, and unresolvable references.
+   - Three fixture and label changes were made after the first scanner run; each is listed in [`docs/LABEL_CHANGES.md`](docs/LABEL_CHANGES.md).
    - Labels recorded in [`labels/fixture_labels.csv`](file:///c:/Users/Rajch/Desktop/Research/tf-misconfig-scanner/labels/fixture_labels.csv).
 
 2. **TerraGoat AWS Target (`data/terragoat/`):**
    - Bridgecrew's open-source deliberately vulnerable infrastructure repository.
    - Fetched via [`scripts/fetch_terragoat.sh`](file:///c:/Users/Rajch/Desktop/Research/tf-misconfig-scanner/scripts/fetch_terragoat.sh) pinned at commit `729f8da62c6a85ce4af5ad3d123de97776d954c4`.
-   - 34 resources evaluated and labeled in [`labels/terragoat_labels.csv`](file:///c:/Users/Rajch/Desktop/Research/tf-misconfig-scanner/labels/terragoat_labels.csv).
+   - 34 (resource, rule) pairs labeled in [`labels/terragoat_labels.csv`](file:///c:/Users/Rajch/Desktop/Research/tf-misconfig-scanner/labels/terragoat_labels.csv).
 
 <!-- RESULTS:START -->
 ## Measured evaluation and Checkov comparison
@@ -87,7 +88,7 @@ Read these caveats first.
 - TerraGoat was built by Bridgecrew, the company behind Checkov, so Checkov is expected to do well on it.
 - S3-03 asks for an explicit encryption choice in code. Checkov check CKV_AWS_19 passes buckets with no configuration, so the two tools answer different questions on S3-03. The second aggregate row leaves it out.
 - A mapped Checkov check that never ran on an item counts as a miss (FN if the label is FAIL). The last column shows how many items that affects. SEC-01 maps only to the provider check CKV_AWS_41, so Checkov's separate secrets scanner is not part of this comparison.
-- UNKNOWN-labelled items are not in precision or recall. tfscan answered UNKNOWN on its UNKNOWN items 24 of 24 times; Checkov has no UNKNOWN state and gave a FAIL or PASS on 9 of them.
+- UNKNOWN-labelled items are not in precision or recall. tfscan answered UNKNOWN on its UNKNOWN items 24 of 24 times; Checkov has no UNKNOWN state and gave a FAIL or PASS on 8 of them.
 - Wall times include process start-up; Checkov's start-up is a large part of its time on small inputs. Single run each, no repetition.
 
 ### Precision, recall and F1 per rule
@@ -102,21 +103,21 @@ Read these caveats first.
 | RDS-02: RDS instance has storage_encrypted false or missing | 7 | 100.0% | 100.0% | 1.000 | 22.2% | 100.0% | 100.0% | 1.000 | 2 |
 | S3-01: S3 bucket has no public access block with all four settings true | 12 | 100.0% | 100.0% | 1.000 | 14.3% | 90.0% | 100.0% | 0.947 | 2 |
 | S3-02: S3 bucket ACL is public-read or public-read-write | 12 | 100.0% | 100.0% | 1.000 | 14.3% | 100.0% | 100.0% | 1.000 | 2 |
-| S3-03: S3 bucket has no explicit server-side encryption configuration | 12 | 100.0% | 100.0% | 1.000 | 21.4% | n/a | 0.0% | n/a | 1 |
+| S3-03: S3 bucket has no explicit server-side encryption configuration | 13 | 100.0% | 100.0% | 1.000 | 13.3% | n/a | 0.0% | n/a | 2 |
 | SEC-01: Hard-coded secret-like literals in provider or resource arguments | 9 | 100.0% | 100.0% | 1.000 | 18.2% | 100.0% | 40.0% | 0.571 | 6 |
 | SG-01: Security group allows ingress from 0.0.0.0/0 or ::/0 on port 22 | 9 | 100.0% | 100.0% | 1.000 | 18.2% | 100.0% | 100.0% | 1.000 | 0 |
 | SG-02: Security group allows ingress from 0.0.0.0/0 or ::/0 on port 3389 | 9 | 100.0% | 100.0% | 1.000 | 18.2% | 100.0% | 100.0% | 1.000 | 0 |
-| All 12 rules | 105 | 100.0% | 100.0% | 1.000 | 19.4% | 97.7% | 79.6% | 0.878 | 19 |
+| All 12 rules | 106 | 100.0% | 100.0% | 1.000 | 18.5% | 97.7% | 79.6% | 0.878 | 20 |
 | All rules except S3-03 | 93 | 100.0% | 100.0% | 1.000 | 19.1% | 97.7% | 93.5% | 0.956 | 18 |
-| fixtures only (all 12 rules) | 72 | 100.0% | 100.0% | 1.000 | 25.0% | 96.9% | 86.1% | 0.912 | 18 |
-| terragoat only (all 12 rules) | 33 | 100.0% | 100.0% | 1.000 | 3.0% | 100.0% | 66.7% | 0.800 | 1 |
+| fixtures only (all 12 rules) | 73 | 100.0% | 100.0% | 1.000 | 24.7% | 96.9% | 86.1% | 0.912 | 19 |
+| terragoat only (all 12 rules) | 33 | 100.0% | 100.0% | 1.000 | 0.0% | 100.0% | 66.7% | 0.800 | 1 |
 
 ### Scan time
 
 | Dataset | Resources | tfscan engine | tfscan CLI wall | Checkov wall | tfscan CLI ms/100 res | Checkov ms/100 res | Wall-time ratio |
 |---|---|---|---|---|---|---|---|
-| Fixtures (one directory per fixture for tfscan) | 101 | 104 ms | 180 ms | 5465 ms | 178 | 5411 | 30.4x |
-| TerraGoat AWS | 17 | 95 ms | 240 ms | 2533 ms | 1414 | 14900 | 10.5x |
+| Fixtures (one directory per fixture for tfscan) | 102 | 99 ms | 168 ms | 5035 ms | 165 | 4936 | 29.9x |
+| TerraGoat AWS | 17 | 77 ms | 182 ms | 2221 ms | 1068 | 13064 | 12.2x |
 
 ### F1 per rule
 
@@ -132,7 +133,6 @@ Every labelled item where the two tools gave different verdicts. The Note column
 | Fixtures | `fixtures/S3-03/fail/case1_v3_no_sse.tf` | `` | S3-03 | FAIL | FAIL | PASS | tfscan | Checkov CKV_AWS_19 (graph_checks/aws/S3BucketEncryption.json in Checkov 3.4.0) passes a bucket with no encryption configuration; tfscan S3-03 deliberately fails it as no explicit choice in code. |
 | Fixtures | `fixtures/S3-03/fail/case2_v4_no_sse.tf` | `` | S3-03 | FAIL | FAIL | PASS | tfscan | Checkov CKV_AWS_19 (graph_checks/aws/S3BucketEncryption.json in Checkov 3.4.0) passes a bucket with no encryption configuration; tfscan S3-03 deliberately fails it as no explicit choice in code. |
 | Fixtures | `fixtures/S3-03/fail/case3_v4_unrelated_resource.tf` | `` | S3-03 | FAIL | FAIL | PASS | tfscan | Checkov CKV_AWS_19 (graph_checks/aws/S3BucketEncryption.json in Checkov 3.4.0) passes a bucket with no encryption configuration; tfscan S3-03 deliberately fails it as no explicit choice in code. |
-| Fixtures | `fixtures/S3-03/unknown/case2_module_kms.tf` | `` | S3-03 | UNKNOWN | UNKNOWN | PASS | n/a (unknowable) | Unresolved value: tfscan returned UNKNOWN; Checkov returned PASS from its mapped check (no UNKNOWN state). |
 | Fixtures | `fixtures/SG-01/unknown/case1_cidr_variable.tf` | `` | SG-01 | UNKNOWN | UNKNOWN | PASS | n/a (unknowable) | Unresolved value: tfscan returned UNKNOWN; Checkov returned PASS from its mapped check (no UNKNOWN state). |
 | Fixtures | `fixtures/SG-01/unknown/case2_port_variable.tf` | `` | SG-01 | UNKNOWN | UNKNOWN | PASS | n/a (unknowable) | Unresolved value: tfscan returned UNKNOWN; Checkov returned PASS from its mapped check (no UNKNOWN state). |
 | Fixtures | `fixtures/SG-02/unknown/case1_cidr_var.tf` | `` | SG-02 | UNKNOWN | UNKNOWN | PASS | n/a (unknowable) | Unresolved value: tfscan returned UNKNOWN; Checkov returned PASS from its mapped check (no UNKNOWN state). |
@@ -148,10 +148,28 @@ Every labelled item where the two tools gave different verdicts. The Note column
 | TerraGoat | `s3.tf` | `aws_s3_bucket.financials` | S3-03 | FAIL | FAIL | PASS | tfscan | Checkov CKV_AWS_19 (graph_checks/aws/S3BucketEncryption.json in Checkov 3.4.0) passes a bucket with no encryption configuration; tfscan S3-03 deliberately fails it as no explicit choice in code. |
 | TerraGoat | `s3.tf` | `aws_s3_bucket.operations` | S3-03 | FAIL | FAIL | PASS | tfscan | Checkov CKV_AWS_19 (graph_checks/aws/S3BucketEncryption.json in Checkov 3.4.0) passes a bucket with no encryption configuration; tfscan S3-03 deliberately fails it as no explicit choice in code. |
 | TerraGoat | `s3.tf` | `aws_s3_bucket.data_science` | S3-03 | FAIL | FAIL | PASS | tfscan | Checkov CKV_AWS_19 (graph_checks/aws/S3BucketEncryption.json in Checkov 3.4.0) passes a bucket with no encryption configuration; tfscan S3-03 deliberately fails it as no explicit choice in code. |
-| TerraGoat | `s3.tf` | `aws_s3_bucket.logs` | S3-03 | PASS | UNKNOWN | PASS | checkov | Bucket declares an explicit aws:kms encryption block, but kms_master_key_id is a reference to another resource; tfscan returned UNKNOWN on the unresolved key, the label (PASS) and Checkov treat the explicit block as sufficient. This is a tfscan weakness and an inconsistency with fixtures/S3-03/unknown/case2_module_kms.tf, which was labelled UNKNOWN. |
 | TerraGoat | `ec2.tf` | `aws_s3_bucket.flowbucket` | S3-03 | FAIL | FAIL | PASS | tfscan | Checkov CKV_AWS_19 (graph_checks/aws/S3BucketEncryption.json in Checkov 3.4.0) passes a bucket with no encryption configuration; tfscan S3-03 deliberately fails it as no explicit choice in code. |
 | TerraGoat | `db-app.tf` | `aws_db_instance.default` | SEC-01 | FAIL | FAIL | NO_CHECK | tfscan | CKV_AWS_41 only inspects provider blocks; Checkov's separate CKV_SECRET_* secrets scanner is not in docs/checkov_mapping.csv, so no mapped check ran on this resource. |
 <!-- RESULTS:END -->
+
+---
+
+## Reproducing the results
+
+```bash
+pip install -e . pytest checkov==3.4.0 matplotlib
+bash scripts/fetch_terragoat.sh
+python scripts/build_fixtures.py
+python -m pytest
+python eval/run_scans.py
+python -m eval.score
+python -m eval.disagreements
+python -m eval.plot_figure
+python -m eval.generate_artifacts
+python report/generate_report.py   # needs the typst CLI
+```
+
+`python-hcl2` is pinned to 8.1.4. Its output format changed between releases (block labels keep their quotes), and the parser is written against 8.1.4.
 
 ---
 
@@ -166,7 +184,7 @@ Static analysis inspects code tokens and HCL abstract syntax trees prior to exec
 
 ### 5.2 Deterministic UNKNOWN Evaluation vs. Heuristic Guessing
 Assuming an unresolvable variable defaults to a secure value (e.g., assuming `publicly_accessible` defaults to `false` when set to an unresolvable variable `var.expose_db`) introduces false negatives if the value is `true` at runtime, creating security blind spots. Conversely, guessing `true` creates false positive alert fatigue. 
-By classifying unresolvable inputs as `UNKNOWN`, `tfscan` flags configurations requiring manual inspection or pipeline input validation. This strict boundary trades raw recall (as unresolvable true vulnerabilities cannot be definitively asserted as `FAIL`) for audit fidelity and zero false positive rates on resolvable configurations.
+By classifying unresolvable inputs as `UNKNOWN`, `tfscan` flags configurations requiring manual inspection or pipeline input validation. This boundary trades recall (an unresolvable value that is vulnerable at deploy time is reported as `UNKNOWN`, not `FAIL`) for never guessing. On the scored items below tfscan made no false positive and no false negative, but the fixtures were written alongside the scanner, so that is a regression result and not evidence of accuracy on unseen code.
 
 ### 5.3 Strict Compliance Evaluation: S3-01 Public Access Blocks
 For `S3-01` (Public Access Block), `tfscan` requires that all four block settings (`block_public_acls`, `block_public_policy`, `ignore_public_acls`, `restrict_public_buckets`) evaluate strictly to `true`. If an organization configures 3 out of 4 settings, `tfscan` flags it as `FAIL`. This strict posture prioritizes public bucket prevention, choosing to flag partially protected buckets rather than assuming incomplete blocks provide adequate defense-in-depth.
