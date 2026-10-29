@@ -18,92 +18,88 @@ def format_pct(val: float) -> str:
     return f"{val * 100:.1f}%"
 
 
-def generate_tables() -> tuple[str, str, str]:
-    with open(SCORES_PATH, "r", encoding="utf-8") as f:
-        scores = json.load(f)
+def pct(v):
+    return "n/a" if v is None else f"{v * 100:.1f}%"
 
-    # Load titles from mapping
+
+def f1s(v):
+    return "n/a" if v is None else f"{v:.3f}"
+
+
+def _row(label, t, c):
+    return (f"| {label} | {t['scored']} | {pct(t['precision'])} | {pct(t['recall'])} | {f1s(t['f1'])} | {pct(t['unknown_rate'])} "
+            f"| {pct(c['precision'])} | {pct(c['recall'])} | {f1s(c['f1'])} | {c['no_result']} |")
+
+
+def generate_tables():
+    scores = json.loads(SCORES_PATH.read_text(encoding="utf-8"))
     titles = {}
     with open(MAPPING_CSV, "r", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             titles[row["rule_id"]] = row["rule_title"]
+    per_rule, agg, head = scores["per_rule_scores"], scores["aggregate"], scores["aggregate_headline"]
+    perf, ds = scores["performance"], scores["dataset_aggregates"]
 
-    per_rule = scores["per_rule_scores"]
-    agg = scores["aggregate"]
-    perf = scores["performance"]
+    hdr = ("| Rule | Scored items | tfscan P | tfscan R | tfscan F1 | tfscan UNKNOWN rate | Checkov P | Checkov R | Checkov F1 | Checkov items with no mapped check |\n"
+           "|---|---|---|---|---|---|---|---|---|---|")
+    lines = [hdr]
+    for rid in sorted(per_rule):
+        lines.append(_row(f"{rid}: {titles.get(rid, rid)}", per_rule[rid]["tfscan"], per_rule[rid]["checkov"]))
+    lines.append(_row("All 12 rules", agg["tfscan"], agg["checkov"]))
+    ex = ", ".join(scores["headline_excludes"])
+    lines.append(_row(f"All rules except {ex}", head["tfscan"], head["checkov"]))
+    for name in ("fixtures", "terragoat"):
+        lines.append(_row(f"{name} only (all 12 rules)", ds[name]["tfscan"], ds[name]["checkov"]))
+    comparison = "\n".join(lines)
 
-    # 1. Main comparison table
-    lines = [
-        "| Rule ID | Rule Title | tfscan Prec | tfscan Rec | tfscan F1 | tfscan Unk Rate | Checkov Prec | Checkov Rec | Checkov F1 |",
-        "|---|---|---|---|---|---|---|---|---|",
-    ]
+    pl = ["| Dataset | Resources | tfscan engine | tfscan CLI wall | Checkov wall | tfscan CLI ms/100 res | Checkov ms/100 res | Wall-time ratio |",
+          "|---|---|---|---|---|---|---|---|"]
+    for name, label in (("fixtures", "Fixtures (one directory per fixture for tfscan)"), ("terragoat", "TerraGoat AWS")):
+        p = perf[name]
+        pl.append(f"| {label} | {p['resources']} | {p['tfscan_engine_ms']:.0f} ms | {p['tfscan_cli_wall_ms']:.0f} ms | {p['checkov_wall_ms']:.0f} ms | {p['tfscan_cli_ms_per_100']:.0f} | {p['checkov_ms_per_100']:.0f} | {p['wall_ratio']}x |")
+    perf_table = "\n".join(pl)
 
-    for rid in sorted(per_rule.keys()):
-        r_title = titles.get(rid, rid)
-        t = per_rule[rid]["tfscan"]
-        c = per_rule[rid]["checkov"]
-        lines.append(
-            f"| **{rid}** | {r_title} | {format_pct(t['precision'])} | {format_pct(t['recall'])} | **{t['f1']:.4f}** | {format_pct(t['unknown_rate'])} | {format_pct(c['precision'])} | {format_pct(c['recall'])} | **{c['f1']:.4f}** |"
-        )
-
-    lines.append(
-        f"| **OVERALL** | **All 12 Evaluated Rules** | **{format_pct(agg['tfscan']['precision'])}** | **{format_pct(agg['tfscan']['recall'])}** | **{agg['tfscan']['f1']:.4f}** | **{format_pct(agg['tfscan']['unknown_rate'])}** | **{format_pct(agg['checkov']['precision'])}** | **{format_pct(agg['checkov']['recall'])}** | **{agg['checkov']['f1']:.4f}** |"
-    )
-
-    comparison_table = "\n".join(lines)
-
-    # 2. Performance Table
-    perf_lines = [
-        "| Benchmark Dataset | Target Resources | tfscan Duration | tfscan ms / 100 Res | Checkov Duration | Checkov ms / 100 Res | Throughput Speedup |",
-        "|---|---|---|---|---|---|---|",
-        f"| **Hand-Written Fixtures** | {perf['fixtures']['tfscan_resources']} | {perf['fixtures']['tfscan_duration_ms']:.2f} ms | {perf['fixtures']['tfscan_ms_per_100']:.1f} ms | {perf['fixtures']['checkov_duration_ms']:.2f} ms | {perf['fixtures']['checkov_ms_per_100']:.1f} ms | **{perf['fixtures']['speedup_factor']}x Faster** |",
-        f"| **TerraGoat AWS Target** | {perf['terragoat']['tfscan_resources']} | {perf['terragoat']['tfscan_duration_ms']:.2f} ms | {perf['terragoat']['tfscan_ms_per_100']:.1f} ms | {perf['terragoat']['checkov_duration_ms']:.2f} ms | {perf['terragoat']['checkov_ms_per_100']:.1f} ms | **{perf['terragoat']['speedup_factor']}x Faster** |",
-    ]
-    perf_table = "\n".join(perf_lines)
-
-    # 3. Disagreement Table (Top sample / full summary)
-    dis_lines = [
-        "| Dataset | File | Resource / Target | Rule | Expected | tfscan | Checkov | Who Was Right | Technical Ground-Truth Explanation |",
-        "|---|---|---|---|---|---|---|---|---|",
-    ]
+    dl = ["| Dataset | File | Resource | Rule | Label | tfscan | Checkov | Right | Note |", "|---|---|---|---|---|---|---|---|---|"]
     with open(DISAGREEMENT_CSV, "r", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            dis_lines.append(
-                f"| {row['dataset']} | `{row['file']}` | `{row['resource_address']}` | **{row['rule_id']}** | `{row['expected']}` | `{row['tfscan_status']}` | `{row['checkov_status']}` | **{row['who_was_right']}** | {row['explanation']} |"
-            )
-
-    disagreement_table = "\n".join(dis_lines)
-    return comparison_table, perf_table, disagreement_table
+        for r in csv.DictReader(f):
+            dl.append(f"| {r['dataset']} | `{r['file']}` | `{r['resource_address']}` | {r['rule_id']} | {r['expected']} | {r['tfscan']} | {r['checkov']} | {r['who_was_right']} | {r['explanation']} |")
+    return comparison, perf_table, "\n".join(dl), scores
 
 
 def update_readme():
-    comp_tbl, perf_tbl, dis_tbl = generate_tables()
+    comp_tbl, perf_tbl, dis_tbl, sc = generate_tables()
 
     # Save summary table standalone
     SUMMARY_TABLE_MD.write_text(comp_tbl + "\n\n" + perf_tbl, encoding="utf-8")
 
+    ag, hd = sc["aggregate"], sc["aggregate_headline"]
     results_section = f"""<!-- RESULTS:START -->
-## Measured Evaluation & Checkov Comparison
+## Measured evaluation and Checkov comparison
 
-> [!NOTE]
-> **Dataset Bias Disclosure:** TerraGoat was designed and authored by Bridgecrew (the creators of Checkov) as a deliberately vulnerable test bed. Checkov is naturally optimized for TerraGoat patterns. Despite this architectural bias, `tfscan` demonstrates superior precision and dramatic throughput advantages.
+Read these caveats first.
 
-### 1. Detection Performance Per Rule (Precision, Recall, F1 Score)
+- The fixtures were written together with the scanner, so tfscan scoring well on them is expected and is weak evidence. TerraGoat is the independent set, and it has only {sc['dataset_aggregates']['terragoat']['tfscan']['scored']} scored items.
+- TerraGoat was built by Bridgecrew, the company behind Checkov, so Checkov is expected to do well on it.
+- S3-03 asks for an explicit encryption choice in code. Checkov check CKV_AWS_19 passes buckets with no configuration, so the two tools answer different questions on S3-03. The second aggregate row leaves it out.
+- A mapped Checkov check that never ran on an item counts as a miss (FN if the label is FAIL). The last column shows how many items that affects. SEC-01 maps only to the provider check CKV_AWS_41, so Checkov's separate secrets scanner is not part of this comparison.
+- UNKNOWN-labelled items are not in precision or recall. tfscan answered UNKNOWN on its UNKNOWN items {sc['aggregate']['tfscan']['correct_unknown']} of {sc['aggregate']['tfscan']['unknowable_items']} times; Checkov has no UNKNOWN state and gave a FAIL or PASS on {sc['aggregate']['checkov']['overconfident']} of them.
+- Wall times include process start-up; Checkov's start-up is a large part of its time on small inputs. Single run each, no repetition.
+
+### Precision, recall and F1 per rule
 
 {comp_tbl}
 
-### 2. Runtime Throughput & Scanning Speed per 100 Resources
+### Scan time
 
 {perf_tbl}
 
-### 3. F1 Score Comparison Across All Rules
+### F1 per rule
 
-![F1 Detection Score by Rule](results/figures/f1_comparison.png)
+![F1 per rule](results/figures/f1_comparison.png)
 
-### 4. Disagreement Analysis & Ground-Truth Verification
+### Disagreements
 
-Below is the verified disagreement analysis across all target resources where `tfscan` and Checkov arrived at divergent classifications:
+Every labelled item where the two tools gave different verdicts. The Note column is the only hand-written part (docs/disagreement_notes.csv).
 
 {dis_tbl}
 <!-- RESULTS:END -->"""

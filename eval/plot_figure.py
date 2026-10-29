@@ -19,12 +19,12 @@ def generate_plot():
     per_rule = data["per_rule_scores"]
     rule_ids = sorted(list(per_rule.keys()))
 
-    tf_f1 = [per_rule[r]["tfscan"]["f1"] for r in rule_ids]
-    ckv_f1 = [per_rule[r]["checkov"]["f1"] for r in rule_ids]
+    tf_f1 = [per_rule[r]["tfscan"]["f1"] or 0 for r in rule_ids]
+    ckv_f1 = [per_rule[r]["checkov"]["f1"] or 0 for r in rule_ids]
 
     # Add aggregate
-    agg = data["aggregate"]
-    labels = rule_ids + ["OVERALL"]
+    agg = data["aggregate_headline"]
+    labels = rule_ids + ["ALL*"]
     tf_f1.append(agg["tfscan"]["f1"])
     ckv_f1.append(agg["checkov"]["f1"])
 
@@ -38,7 +38,7 @@ def generate_plot():
     rects2 = ax.bar(x + width / 2, ckv_f1, width, label="Checkov v3.4.0", color="#3b82f6", edgecolor="#1d4ed8", linewidth=0.8)
 
     ax.set_ylabel("F1 Score", fontsize=11, fontweight="bold", color="#0f172a")
-    ax.set_title("Detection Accuracy (F1 Score) by Rule: tfscan vs. Checkov", fontsize=13, fontweight="bold", pad=14, color="#0f172a")
+    ax.set_title("F1 per rule (ALL* excludes S3-03)", fontsize=13, fontweight="bold", pad=14, color="#0f172a")
     ax.set_xticks(x)
     ax.set_xticklabels(labels, fontsize=10, fontweight="bold", rotation=0)
     ax.set_ylim(0, 1.15)

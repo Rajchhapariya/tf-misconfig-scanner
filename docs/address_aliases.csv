@@ -1,0 +1,2 @@
+dataset,file,label_address,tfscan_address,checkov_address
+TerraGoat,providers.tf,provider.aws.default,provider.aws,aws.default

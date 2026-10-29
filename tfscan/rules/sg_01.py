@@ -26,26 +26,7 @@ class SG01SshIngress(Rule):
         Evaluates a single ingress rule definition.
         Returns ("FAIL", reason), ("UNKNOWN", reason), or ("PASS", ok_message).
         """
-        # Resolve CIDRs
-        cidrs = rule_data.get("cidr_blocks") or []
-        ipv6_cidrs = rule_data.get("ipv6_cidr_blocks") or []
-
-        resolved_cidrs, is_cidrs_res = context.resolve_attribute(cidrs)
-        resolved_ipv6, is_ipv6_res = context.resolve_attribute(ipv6_cidrs)
-
-        if not is_cidrs_res or not is_ipv6_res:
-            return "UNKNOWN", "Ingress CIDR block expression cannot be resolved statically."
-
-        cidr_list = resolved_cidrs if isinstance(resolved_cidrs, list) else [resolved_cidrs]
-        ipv6_list = resolved_ipv6 if isinstance(resolved_ipv6, list) else [resolved_ipv6]
-
-        is_open_v4 = any(c in ["0.0.0.0/0", "0.0.0.0/0"] for c in cidr_list if c is not None)
-        is_open_v6 = any(c in ["::/0"] for c in ipv6_list if c is not None)
-
-        if not (is_open_v4 or is_open_v6):
-            return "PASS", "No public 0.0.0.0/0 or ::/0 CIDR in ingress rule."
-
-        # Check ports
+        # Ports first: if the port range cannot cover the target port, the CIDR is irrelevant.
         from_port = rule_data.get("from_port")
         to_port = rule_data.get("to_port")
         protocol = rule_data.get("protocol", "tcp")
@@ -55,21 +36,45 @@ class SG01SshIngress(Rule):
         res_proto, is_proto_res = context.resolve_attribute(protocol)
 
         if not is_from_res or not is_to_res or not is_proto_res:
-            return "UNKNOWN", "Ingress port/protocol expression cannot be resolved statically."
+            exposes = None  # unknown
+            port_reason = "Ingress port/protocol expression cannot be resolved statically."
+        elif str(res_proto).lower() in ["-1", "all"]:
+            exposes = True
+            port_reason = f"all protocols/ports (includes port {self.TARGET_PORT})"
+        else:
+            try:
+                fp = int(res_from) if res_from is not None else 0
+                tp = int(res_to) if res_to is not None else 0
+            except (ValueError, TypeError):
+                exposes = None
+                port_reason = f"Could not parse port range integers ({res_from}-{res_to})."
+            else:
+                exposes = (fp == 0 and tp == 0) or (fp <= self.TARGET_PORT <= tp)
+                port_reason = f"range {fp}-{tp}"
 
-        proto_str = str(res_proto).lower()
-        if proto_str in ["-1", "all"]:
-            return "FAIL", f"Ingress rule allows all protocols/ports from public CIDR (exposing port {self.TARGET_PORT})."
+        if exposes is False:
+            return "PASS", "Port range does not expose target administrative port."
 
-        try:
-            fp = int(res_from) if res_from is not None else 0
-            tp = int(res_to) if res_to is not None else 0
-            if (fp == 0 and tp == 0) or (fp <= self.TARGET_PORT <= tp):
-                return "FAIL", f"Ingress rule allows unrestricted access to port {self.TARGET_PORT} (range {fp}-{tp})."
-        except (ValueError, TypeError):
-            return "UNKNOWN", f"Could not parse port range integers ({res_from}-{res_to})."
+        cidrs = rule_data.get("cidr_blocks") or []
+        ipv6_cidrs = rule_data.get("ipv6_cidr_blocks") or []
+        resolved_cidrs, is_cidrs_res = context.resolve_attribute(cidrs)
+        resolved_ipv6, is_ipv6_res = context.resolve_attribute(ipv6_cidrs)
 
-        return "PASS", "Port range does not expose target administrative port."
+        if not is_cidrs_res or not is_ipv6_res:
+            return "UNKNOWN", "Ingress CIDR block expression cannot be resolved statically."
+
+        cidr_list = resolved_cidrs if isinstance(resolved_cidrs, list) else [resolved_cidrs]
+        ipv6_list = resolved_ipv6 if isinstance(resolved_ipv6, list) else [resolved_ipv6]
+        is_open = any(c == "0.0.0.0/0" for c in cidr_list if c is not None) or any(
+            c == "::/0" for c in ipv6_list if c is not None
+        )
+
+        if not is_open:
+            return "PASS", "No public 0.0.0.0/0 or ::/0 CIDR in ingress rule."
+        if exposes is None:
+            return "UNKNOWN", port_reason
+        return "FAIL", f"Ingress rule allows unrestricted access to port {self.TARGET_PORT} ({port_reason})."
+
 
     def evaluate(self, resource: Resource, context: ScanContext) -> Finding:
         if resource.resource_type == "aws_security_group_rule":

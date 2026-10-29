@@ -14,6 +14,32 @@ import hcl2
 from tfscan.models import Resource
 
 
+def _strip_hcl_quotes(obj: Any) -> Any:
+    """Normalize python-hcl2 output.
+
+    Newer python-hcl2 releases keep the surrounding double quotes on block labels and
+    string literals. Strip them so the rest of the parser sees plain strings.
+    """
+    if isinstance(obj, dict):
+        return {_strip_hcl_quotes(k): _strip_hcl_quotes(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_strip_hcl_quotes(i) for i in obj]
+    if isinstance(obj, str) and len(obj) >= 2 and obj.startswith('"') and obj.endswith('"'):
+        return obj[1:-1]
+    return obj
+
+
+def _load_hcl(fh) -> Dict[str, Any]:
+    """Load an HCL file with line metadata when the installed python-hcl2 supports it."""
+    try:
+        data = hcl2.load(fh, with_meta=True)
+    except TypeError:
+        fh.seek(0)
+        data = hcl2.load(fh)
+    return _strip_hcl_quotes(data)
+
+
+
 @dataclass
 class ScanContext:
     target_path: Path
@@ -95,6 +121,44 @@ class ScanContext:
         return linked
 
 
+def _hcl_object_to_json(text: str) -> str:
+    """Convert an HCL object/list literal (`{Key = "v", List = [..]}`) into JSON text.
+
+    Newer python-hcl2 releases return jsonencode() arguments as raw HCL source instead of
+    a Python literal. Only literals are converted; any reference or function call makes
+    json.loads fail, which the caller reports as UNKNOWN.
+    """
+    out = []
+    i, n = 0, len(text)
+    while i < n:
+        ch = text[i]
+        if ch == '"':
+            j = i + 1
+            while j < n and text[j] != '"':
+                j += 2 if text[j] == "\\" else 1
+            out.append(text[i : j + 1])
+            i = j + 1
+            continue
+        if ch.isalpha() or ch == "_":
+            j = i
+            while j < n and (text[j].isalnum() or text[j] in "_-"):
+                j += 1
+            word = text[i:j]
+            k = j
+            while k < n and text[k] in " \t\r\n":
+                k += 1
+            if k < n and text[k] == "=" and text[k : k + 2] != "==":
+                out.append('"' + word + '":')
+                i = k + 1
+                continue
+            out.append(word)
+            i = j
+            continue
+        out.append(ch)
+        i += 1
+    return "".join(out)
+
+
 def unwrap_list_if_single(val: Any) -> Any:
     if isinstance(val, list) and len(val) == 1:
         return val[0]
@@ -139,6 +203,11 @@ def resolve_value(val: Any, context: ScanContext) -> Tuple[Any, bool]:
     if isinstance(val, str):
         val_clean = val.strip()
 
+        # Heredoc: <<EOF ... EOF (python-hcl2 returns the raw markers)
+        heredoc = re.match(r"^<<-?([A-Za-z_][A-Za-z0-9_]*)\n(.*)\n\s*\1$", val_clean, re.S)
+        if heredoc:
+            return resolve_value(heredoc.group(2), context)
+
         # Handle jsonencode(...) function calls parsed by python-hcl2
         if (val_clean.startswith("${jsonencode(") and val_clean.endswith(")}")) or (
             val_clean.startswith("jsonencode(") and val_clean.endswith(")")
@@ -147,12 +216,16 @@ def resolve_value(val: Any, context: ScanContext) -> Tuple[Any, bool]:
                 inner = val_clean[len("${jsonencode(") : -len(")}")]
             else:
                 inner = val_clean[len("jsonencode(") : -len(")")]
+            import ast
+            import json as _json
             try:
-                import ast
                 evaluated = ast.literal_eval(inner)
-                return resolve_value(evaluated, context)
             except Exception:
-                return None, False
+                try:
+                    evaluated = _json.loads(_hcl_object_to_json(inner))
+                except Exception:
+                    return None, False
+            return resolve_value(evaluated, context)
 
         # Pure unresolvable indicators
         unresolvable_patterns = [
@@ -289,7 +362,7 @@ def parse_directory(target_path: Path) -> ScanContext:
     for tv_file in tfvars_files:
         try:
             with open(tv_file, "r", encoding="utf-8", errors="ignore") as f:
-                parsed_vars = hcl2.load(f)
+                parsed_vars = _load_hcl(f)
                 for k, v in parsed_vars.items():
                     context.variables[k] = unwrap_list_if_single(v)
         except Exception:
@@ -299,7 +372,7 @@ def parse_directory(target_path: Path) -> ScanContext:
     for tf_file in context.files:
         try:
             with open(tf_file, "r", encoding="utf-8", errors="ignore") as f:
-                parsed = hcl2.load(f)
+                parsed = _load_hcl(f)
 
             # Variables
             for var_dict in parsed.get("variable", []):
@@ -343,7 +416,7 @@ def parse_directory(target_path: Path) -> ScanContext:
     for tf_file in context.files:
         try:
             with open(tf_file, "r", encoding="utf-8", errors="ignore") as f:
-                parsed = hcl2.load(f)
+                parsed = _load_hcl(f)
 
             for res_entry in parsed.get("resource", []):
                 for rtype, rinstances in res_entry.items():
