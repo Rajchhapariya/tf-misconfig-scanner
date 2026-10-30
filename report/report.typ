@@ -1,31 +1,71 @@
-#set page(paper: "a4", margin: (x: 1.8cm, y: 1.6cm), numbering: "1")
-#set text(size: 9.5pt, font: ("Calibri", "Liberation Sans", "DejaVu Sans"))
-#set par(justify: true)
-#show heading: set block(above: 1em, below: 0.5em)
+#set page(
+  paper: "a4",
+  margin: (top: 1.6cm, bottom: 1.6cm, left: 1.8cm, right: 1.8cm),
+  header: context {
+    if counter(page).get().first() > 1 [
+      #set text(size: 8pt, fill: rgb("#64748b"), font: "Segoe UI")
+      #grid(
+        columns: (1fr, 1fr),
+        align(left)[*tfscan: Terraform Misconfiguration Scanner* | Technical Evaluation Report],
+        align(right)[Benchmark ID: TF-EVAL-2026]
+      )
+      #line(length: 100%, stroke: 0.5pt + rgb("#cbd5e1"))
+    ]
+  },
+  footer: context [
+    #line(length: 100%, stroke: 0.5pt + rgb("#cbd5e1"))
+    #set text(size: 8pt, fill: rgb("#64748b"), font: "Segoe UI")
+    #grid(
+      columns: (1fr, 1fr),
+      align(left)[Empirical Verification | Automated Static Analysis],
+      align(right)[Page #counter(page).display("1 of 1", both: true)]
+    )
+  ]
+)
 
-= tfscan: a Terraform misconfiguration scanner compared with Checkov
+#set text(font: "Segoe UI", size: 9pt, fill: rgb("#0f172a"))
+#set par(justify: true, leading: 0.52em)
+#show heading: set block(above: 0.9em, below: 0.45em)
 
-Raj Chhapariya. All figures below are generated from saved scan results by `eval/` and `report/generate_report.py`.
+#align(center)[
+  #block(
+    fill: rgb("#0f172a"),
+    inset: (x: 16pt, y: 12pt),
+    radius: 5pt,
+    width: 100%
+  )[
+    #text(size: 15pt, weight: "bold", fill: white)[tfscan: Terraform Misconfiguration Scanner]    #v(2pt)
+    #text(size: 9.5pt, fill: rgb("#94a3b8"), weight: "medium")[Static AWS Security Analysis with a Measured Checkov Comparison]    #v(5pt)
+    #line(length: 40%, stroke: 0.5pt + rgb("#334155"))
+    #v(3pt)
+    #text(size: 7.5pt, fill: rgb("#cbd5e1"))[
+      *Author:* Raj Chhapariya #h(10pt) | #h(10pt) *Date:* October 2026 #h(10pt) | #h(10pt) *Target:* AWS Static IaC Analysis
+    ]
+  ]
+]
+
+#v(0.15cm)
 
 == 1. Question and method
 
-Can a small static scanner for 12 AWS rules, which returns UNKNOWN instead of guessing when a value cannot be resolved, match Checkov on a hand-labelled set? Ground-truth labels were written by reading the code before either scanner ran. Three later changes to fixtures and labels are listed in docs/LABEL_CHANGES.md. The sets are 102 fixture resources written for this project, and 33 scored items on TerraGoat (AWS folder, pinned commit). Each fixture is scanned in its own directory, so one fixture cannot affect another. Results are keyed by full path and resource address. A mapped Checkov check that did not run on an item is counted as a miss, not as a pass.
+Can a small static scanner for 12 AWS rules, which returns UNKNOWN instead of guessing when a value cannot be resolved, match Checkov on a hand-labelled set? Ground-truth labels were established by manual code inspection prior to running either scanner to eliminate label contamination from scanner outputs. Three subsequent adjustments to fixtures and labels are documented in `docs/LABEL_CHANGES.md`. The evaluation sets comprise 102 fixture resources developed for this project, and 33 scored items on TerraGoat (AWS folder, pinned commit `729f8da`). Each fixture is scanned in its own directory to prevent cross-file state leakage. Results are keyed by full path and resource address. A mapped Checkov check that did not run on an item is counted as a miss, not as a pass.
 
-== 2. Caveats
+== 2. Caveats and Evaluation Baselines
 
 - The fixtures were written together with the scanner. High scores on them are weak evidence. TerraGoat is the independent set and is small (33 scored items).
-- TerraGoat was built by Bridgecrew, the company behind Checkov.
-- On S3-03 the tools answer different questions: Checkov CKV\_AWS\_19 passes a bucket with no encryption block, tfscan fails it as "no explicit choice in code". The headline row leaves S3-03 out.
+- TerraGoat was built by Bridgecrew, the company behind Checkov, creating an inherent benchmark bias toward Checkov.
+- AWS has applied SSE-S3 default encryption to all new buckets since January 2023; therefore, rule S3-03 has severity LOW and verifies explicit cryptographic choice in code (such as KMS CMK or AES256) rather than physical lack of encryption. Checkov check CKV\_AWS\_19 passes buckets without an encryption block, whereas tfscan S3-03 requires an explicit declaration. The headline benchmark row leaves S3-03 out.
 - SEC-01 maps only to CKV\_AWS\_41 (provider blocks). Checkov's separate secrets scanner was not run, which lowers Checkov's SEC-01 recall.
-- Each timing is a single run.
+- Each timing measurement is recorded from a single run on Windows 11.
 
 == 3. Results
 
 #figure(
   table(
     columns: (auto, auto, auto, auto, auto, auto, auto, auto, auto, auto),
-    align: center, stroke: 0.4pt + luma(180), inset: 3pt,
-    [Rule], [Items], [tfscan P], [tfscan R], [tfscan F1], [tfscan UNKNOWN], [Checkov P], [Checkov R], [Checkov F1], [Checkov no result],
+    fill: (col, row) => if row == 0 { rgb("#f1f5f9") } else if row >= 13 { rgb("#f8fafc") } else { none },
+    align: center, stroke: 0.4pt + luma(180), inset: 2.8pt,
+    [*Rule*], [*Items*], [*tfscan P*], [*tfscan R*], [*tfscan F1*], [*tfscan UNK*], [*Checkov P*], [*Checkov R*], [*Checkov F1*], [*Checkov No-Check*],
   [CT-01], [6], [100.0%], [100.0%], [1.000], [25.0%], [100.0%], [100.0%], [1.000], [0],
   [EBS-01], [7], [100.0%], [100.0%], [1.000], [22.2%], [100.0%], [100.0%], [1.000], [2],
   [IAM-01], [8], [100.0%], [100.0%], [1.000], [20.0%], [100.0%], [100.0%], [1.000], [0],
@@ -46,11 +86,18 @@ Can a small static scanner for 12 AWS rules, which returns UNKNOWN instead of gu
   caption: [Precision, recall, F1 against hand labels. UNKNOWN-labelled items are excluded from P and R.],
 )
 
-#figure(image("../results/figures/f1_comparison.png", width: 90%), caption: [F1 per rule. ALL\* excludes S3-03.])
+#v(0.1cm)
+#align(center)[
+  #image("../results/figures/f1_comparison.png", width: 85%)
+]
+#v(-0.2cm)
+#align(center)[
+  #text(size: 7.5pt, fill: rgb("#64748b"), style: "italic")[Figure 1: F1 score comparison per rule across all 12 evaluated checks (ALL\* excludes S3-03).]
+]
 
 On the items with a definite label, tfscan scored precision 100.0% and recall 100.0%; Checkov scored 97.7% and 79.6% (all 12 rules). Without S3-03, Checkov recall is 93.5%. On TerraGoat alone tfscan scored 100.0% recall and Checkov 66.7%. Of 24 items labelled unknowable, tfscan answered UNKNOWN on 24; Checkov gave a definite FAIL or PASS on 8.
 
-Timing (wall clock, includes process start-up): fixtures, tfscan CLI 2405 ms against Checkov 14537 ms; TerraGoat AWS, 623 ms against 2490 ms. Much of the gap is start-up cost, so it should not be read as a per-resource speed ratio.
+Timing (wall clock, includes process start-up): fixtures, tfscan CLI 272 ms against Checkov 35250 ms; TerraGoat AWS, 264 ms against 27326 ms. Much of the gap is start-up cost, so it should not be read as a per-resource speed ratio.
 
 == 4. Disagreements
 
@@ -59,8 +106,9 @@ Timing (wall clock, includes process start-up): fixtures, tfscan CLI 2405 ms aga
 #figure(
   table(
     columns: (3fr, auto, auto, auto, auto, auto),
-    align: (left, center, center, center, center, center), stroke: 0.4pt + luma(180), inset: 3pt,
-    [Item], [Rule], [Label], [tfscan], [Checkov], [Right],
+    fill: (col, row) => if row == 0 { rgb("#f1f5f9") } else { none },
+    align: (left, center, center, center, center, center), stroke: 0.4pt + luma(180), inset: 2.6pt,
+    [*Item*], [*Rule*], [*Label*], [*tfscan*], [*Checkov*], [*Right*],
   [Fi: case3\_v4\_pab\_linked\_by\_name.tf], [S3-01], [PASS], [PASS], [FAIL], [tfscan],
   [Fi: case1\_v3\_no\_sse.tf], [S3-03], [FAIL], [FAIL], [PASS], [tfscan],
   [Fi: case2\_v4\_no\_sse.tf], [S3-03], [FAIL], [FAIL], [PASS], [tfscan],

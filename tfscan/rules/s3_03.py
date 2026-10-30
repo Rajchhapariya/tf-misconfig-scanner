@@ -16,7 +16,7 @@ class S303ExplicitEncryption(Rule):
     severity = Severity.LOW
     resource_types = ["aws_s3_bucket"]
     cis_controls = []
-    aws_controls = ["[S3.4]"]
+    aws_controls = []
 
     def evaluate(self, resource: Resource, context: ScanContext) -> Finding:
         linked_sses = context.find_linked_s3_resources(resource).get(

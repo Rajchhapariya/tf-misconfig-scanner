@@ -12,6 +12,6 @@ class SG02RdpIngress(SG01SshIngress):
     severity = Severity.HIGH
     resource_types = ["aws_security_group", "aws_security_group_rule"]
     cis_controls = ["5.2", "5.3"]
-    aws_controls = ["[EC2.14]"]
+    aws_controls = ["[EC2.53]", "[EC2.54]"]
 
     TARGET_PORT = 3389

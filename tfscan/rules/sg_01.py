@@ -15,7 +15,7 @@ class SG01SshIngress(Rule):
     severity = Severity.HIGH
     resource_types = ["aws_security_group", "aws_security_group_rule"]
     cis_controls = ["5.2", "5.3"]
-    aws_controls = ["[EC2.13]"]
+    aws_controls = ["[EC2.53]", "[EC2.54]"]
 
     TARGET_PORT = 22
 

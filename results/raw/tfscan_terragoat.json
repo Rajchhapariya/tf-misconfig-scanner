@@ -6,13 +6,12 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.flowbucket",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/ec2.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\ec2.tf",
       "line_number": 271,
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -24,13 +23,12 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.data",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -42,13 +40,12 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.financials",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 42,
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -60,13 +57,12 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.operations",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 65,
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -78,13 +74,12 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.data_science",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 89,
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -96,13 +91,12 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.logs",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 113,
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -114,13 +108,11 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.flowbucket",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/ec2.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\ec2.tf",
       "line_number": 271,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -132,13 +124,11 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.data",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -150,13 +140,11 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.financials",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 42,
       "status": "PASS",
       "message": "S3 bucket ACL is set to non-public permission 'private'.",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -168,13 +156,11 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.operations",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 65,
       "status": "PASS",
       "message": "S3 bucket ACL is set to non-public permission 'private'.",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -186,13 +172,11 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.data_science",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 89,
       "status": "PASS",
       "message": "S3 bucket ACL is set to non-public permission 'private'.",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -204,13 +188,11 @@
       "severity": "HIGH",
       "resource_address": "aws_s3_bucket.logs",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 113,
       "status": "PASS",
       "message": "S3 bucket ACL is set to non-public permission 'log-delivery-write'.",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -222,16 +204,12 @@
       "severity": "LOW",
       "resource_address": "aws_s3_bucket.flowbucket",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/ec2.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\ec2.tf",
       "line_number": 271,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-03",
@@ -239,16 +217,12 @@
       "severity": "LOW",
       "resource_address": "aws_s3_bucket.data",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-03",
@@ -256,16 +230,12 @@
       "severity": "LOW",
       "resource_address": "aws_s3_bucket.financials",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 42,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-03",
@@ -273,16 +243,12 @@
       "severity": "LOW",
       "resource_address": "aws_s3_bucket.operations",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 65,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-03",
@@ -290,16 +256,12 @@
       "severity": "LOW",
       "resource_address": "aws_s3_bucket.data_science",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 89,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-03",
@@ -307,16 +269,12 @@
       "severity": "LOW",
       "resource_address": "aws_s3_bucket.logs",
       "resource_type": "aws_s3_bucket",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/s3.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\s3.tf",
       "line_number": 113,
       "status": "PASS",
       "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "SG-01",
@@ -324,15 +282,17 @@
       "severity": "HIGH",
       "resource_address": "aws_security_group.default",
       "resource_type": "aws_security_group",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/db-app.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\db-app.tf",
       "line_number": 117,
       "status": "PASS",
       "message": "Security group defines no inline ingress rules.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -341,15 +301,17 @@
       "severity": "HIGH",
       "resource_address": "aws_security_group.web-node",
       "resource_type": "aws_security_group",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/ec2.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\ec2.tf",
       "line_number": 77,
       "status": "FAIL",
       "message": "Ingress rule allows unrestricted access to port 22 (range 22-22).",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -358,15 +320,17 @@
       "severity": "HIGH",
       "resource_address": "aws_security_group_rule.ingress",
       "resource_type": "aws_security_group_rule",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/db-app.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\db-app.tf",
       "line_number": 136,
       "status": "PASS",
       "message": "Port range does not expose target administrative port.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -375,15 +339,17 @@
       "severity": "HIGH",
       "resource_address": "aws_security_group_rule.egress",
       "resource_type": "aws_security_group_rule",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/db-app.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\db-app.tf",
       "line_number": 145,
       "status": "PASS",
       "message": "Security group rule is not an ingress rule.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -392,15 +358,17 @@
       "severity": "HIGH",
       "resource_address": "aws_security_group.default",
       "resource_type": "aws_security_group",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/db-app.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\db-app.tf",
       "line_number": 117,
       "status": "PASS",
       "message": "Security group defines no inline ingress rules.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -409,15 +377,17 @@
       "severity": "HIGH",
       "resource_address": "aws_security_group.web-node",
       "resource_type": "aws_security_group",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/ec2.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\ec2.tf",
       "line_number": 77,
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 3389.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -426,15 +396,17 @@
       "severity": "HIGH",
       "resource_address": "aws_security_group_rule.ingress",
       "resource_type": "aws_security_group_rule",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/db-app.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\db-app.tf",
       "line_number": 136,
       "status": "PASS",
       "message": "Port range does not expose target administrative port.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -443,15 +415,17 @@
       "severity": "HIGH",
       "resource_address": "aws_security_group_rule.egress",
       "resource_type": "aws_security_group_rule",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/db-app.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\db-app.tf",
       "line_number": 145,
       "status": "PASS",
       "message": "Security group rule is not an ingress rule.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -460,12 +434,12 @@
       "severity": "HIGH",
       "resource_address": "aws_db_instance.default",
       "resource_type": "aws_db_instance",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/db-app.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\db-app.tf",
       "line_number": 1,
       "status": "FAIL",
       "message": "RDS instance has publicly_accessible configured as true, exposing the database to the internet.",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -477,12 +451,12 @@
       "severity": "HIGH",
       "resource_address": "aws_db_instance.default",
       "resource_type": "aws_db_instance",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/db-app.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\db-app.tf",
       "line_number": 1,
       "status": "FAIL",
       "message": "RDS instance storage_encrypted is set to 'False' instead of true.",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -494,13 +468,11 @@
       "severity": "HIGH",
       "resource_address": "aws_ebs_volume.web_host_storage",
       "resource_type": "aws_ebs_volume",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/ec2.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\ec2.tf",
       "line_number": 34,
       "status": "FAIL",
       "message": "EBS volume encrypted argument is missing or omitted (defaults to unencrypted).",
-      "cis_controls": [
-        "2.2.1"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[EC2.3]"
       ]
@@ -511,7 +483,7 @@
       "severity": "CRITICAL",
       "resource_address": "aws_iam_role_policy.ec2policy",
       "resource_type": "aws_iam_role_policy",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/db-app.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\db-app.tf",
       "line_number": 206,
       "status": "PASS",
       "message": "IAM policy does not allow full wildcard administrative permissions ('*' on '*').",
@@ -528,7 +500,7 @@
       "severity": "CRITICAL",
       "resource_address": "aws_iam_user_policy.userpolicy",
       "resource_type": "aws_iam_user_policy",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/iam.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\iam.tf",
       "line_number": 25,
       "status": "PASS",
       "message": "IAM policy does not allow full wildcard administrative permissions ('*' on '*').",
@@ -545,12 +517,12 @@
       "severity": "MEDIUM",
       "resource_address": "aws_kms_key.logs_key",
       "resource_type": "aws_kms_key",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/kms.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\kms.tf",
       "line_number": 1,
       "status": "FAIL",
       "message": "KMS key has enable_key_rotation omitted or missing (defaults to disabled).",
       "cis_controls": [
-        "2.4.1"
+        "3.6"
       ],
       "aws_controls": [
         "[KMS.4]"
@@ -562,7 +534,7 @@
       "severity": "HIGH",
       "resource_address": "provider.aws",
       "resource_type": "provider.aws",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/providers.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\providers.tf",
       "line_number": 2,
       "status": "PASS",
       "message": "No hard-coded secret literals detected in resource arguments.",
@@ -575,7 +547,7 @@
       "severity": "HIGH",
       "resource_address": "provider.aws.plain_text_access_keys_provider",
       "resource_type": "provider.aws",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/providers.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\providers.tf",
       "line_number": 7,
       "status": "FAIL",
       "message": "Hard-coded secret literal found in argument(s): access_key, secret_key.",
@@ -588,7 +560,7 @@
       "severity": "HIGH",
       "resource_address": "aws_db_instance.default",
       "resource_type": "aws_db_instance",
-      "file_path": "/sessions/rcw-012jbyzwgepu7xten9ndfqml/mnt/Desktop/Research/tf-misconfig-scanner/data/terragoat/terraform/aws/db-app.tf",
+      "file_path": "C:\\Users\\Rajch\\Desktop\\Research\\tf-misconfig-scanner\\data\\terragoat\\terraform\\aws\\db-app.tf",
       "line_number": 1,
       "status": "FAIL",
       "message": "Hard-coded secret literal found in argument(s): password.",
@@ -597,6 +569,6 @@
     }
   ],
   "resources_evaluated": 17,
-  "scan_duration_ms": 239.63,
-  "cli_wall_ms": 622.87
+  "scan_duration_ms": 313.39,
+  "cli_wall_ms": 264.15
 }

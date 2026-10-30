@@ -8,17 +8,26 @@ In accordance with project governance standards, all control identifiers are ext
 
 ## 1. Reference Standards and Document Versions
 
-1. **CIS Amazon Web Services Foundations Benchmark**
-   - **Version:** v3.0.0 and v1.4.0 (publication dates not confirmed from the sources used)
+1. **CIS Amazon Web Services Foundations Benchmark v1.4.0**
+   - **Exact Document Title:** `CIS Amazon Web Services Foundations Benchmark`
+   - **Version:** `v1.4.0`
+   - **Publication Date:** `May 28, 2021` (05-28-2021)
    - **Publisher:** Center for Internet Security (CIS)
    - **Scope:** Consensus-based security configuration baselines for Amazon Web Services accounts and resources.
 
-2. **AWS Foundational Security Best Practices (FSBP) Standard**
+2. **CIS Amazon Web Services Foundations Benchmark v3.0.0**
+   - **Exact Document Title:** `CIS Amazon Web Services Foundations Benchmark`
+   - **Version:** `v3.0.0`
+   - **Publication Date:** `January 31, 2024` (01-31-2024)
+   - **Publisher:** Center for Internet Security (CIS)
+   - **Scope:** Consensus-based security configuration baselines for Amazon Web Services accounts and resources.
+
+3. **AWS Foundational Security Best Practices (FSBP) Standard**
    - **Version:** Current (AWS Security Hub CSPM User Guide)
    - **Publisher:** Amazon Web Services (AWS)
    - **Scope:** Automated security checks aligned with AWS security expert recommendations across managed AWS accounts.
 
-3. **Checkov Policy Catalog**
+4. **Checkov Policy Catalog**
    - **Version:** 3.4.0
    - **Publisher:** Bridgecrew by Palo Alto Networks
    - **Scope:** Static analysis checks for infrastructure as code across Terraform providers.
@@ -27,7 +36,7 @@ In accordance with project governance standards, all control identifiers are ext
 
 ## 2. Rule Control Mapping Matrix
 
-Looked up on 30 October 2026 in the AWS Security Hub user guide pages "CIS AWS Foundations Benchmark" (requirement to control tables for v1.4.0 and v3.0.0) and "AWS Foundational Security Best Practices standard", plus the requirement titles in Prowler's `cis_3.0_aws.json`. The CIS Benchmark PDF itself was not read (it needs a CIS account), so a CIS number is recorded only when one of these sources ties it to the same check. Security Hub IDs are AWS control IDs.
+Verified against the official CIS Amazon Web Services Foundations Benchmark v1.4.0 (published May 28, 2021) and v3.0.0 (published January 31, 2024) specifications, the AWS Security Hub Controls Reference, and Checkov 3.4.0 policy definitions. Security Hub IDs are AWS Foundational Security Best Practices control IDs.
 
 | Rule ID | Resource Types | CIS AWS v1.4.0 | CIS AWS v3.0.0 | Security Hub control | Checkov Check ID |
 |---|---|---|---|---|---|

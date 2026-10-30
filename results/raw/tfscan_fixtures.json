@@ -162,9 +162,7 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "EBS volume encrypted argument is set to 'False' instead of true.",
-      "cis_controls": [
-        "2.2.1"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[EC2.3]"
       ]
@@ -179,9 +177,7 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "EBS volume encrypted argument is missing or omitted (defaults to unencrypted).",
-      "cis_controls": [
-        "2.2.1"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[EC2.3]"
       ]
@@ -196,9 +192,7 @@
       "line_number": 6,
       "status": "FAIL",
       "message": "EBS volume encrypted argument is set to 'False' instead of true.",
-      "cis_controls": [
-        "2.2.1"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[EC2.3]"
       ]
@@ -213,9 +207,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "EBS volume encryption is enabled.",
-      "cis_controls": [
-        "2.2.1"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[EC2.3]"
       ]
@@ -230,9 +222,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "EBS volume encryption is enabled.",
-      "cis_controls": [
-        "2.2.1"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[EC2.3]"
       ]
@@ -247,9 +237,7 @@
       "line_number": 6,
       "status": "PASS",
       "message": "EBS volume encryption is enabled.",
-      "cis_controls": [
-        "2.2.1"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[EC2.3]"
       ]
@@ -264,9 +252,7 @@
       "line_number": 5,
       "status": "UNKNOWN",
       "message": "EBS volume encrypted expression cannot be resolved statically.",
-      "cis_controls": [
-        "2.2.1"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[EC2.3]"
       ]
@@ -281,9 +267,7 @@
       "line_number": 5,
       "status": "UNKNOWN",
       "message": "EBS volume encrypted expression cannot be resolved statically.",
-      "cis_controls": [
-        "2.2.1"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[EC2.3]"
       ]
@@ -435,7 +419,7 @@
       "status": "FAIL",
       "message": "KMS key enable_key_rotation is configured as 'False' instead of true.",
       "cis_controls": [
-        "2.4.1"
+        "3.6"
       ],
       "aws_controls": [
         "[KMS.4]"
@@ -452,7 +436,7 @@
       "status": "FAIL",
       "message": "KMS key has enable_key_rotation omitted or missing (defaults to disabled).",
       "cis_controls": [
-        "2.4.1"
+        "3.6"
       ],
       "aws_controls": [
         "[KMS.4]"
@@ -469,7 +453,7 @@
       "status": "FAIL",
       "message": "KMS key enable_key_rotation is configured as 'False' instead of true.",
       "cis_controls": [
-        "2.4.1"
+        "3.6"
       ],
       "aws_controls": [
         "[KMS.4]"
@@ -486,7 +470,7 @@
       "status": "PASS",
       "message": "KMS key automatic key rotation is enabled.",
       "cis_controls": [
-        "2.4.1"
+        "3.6"
       ],
       "aws_controls": [
         "[KMS.4]"
@@ -503,7 +487,7 @@
       "status": "PASS",
       "message": "KMS key automatic key rotation is enabled.",
       "cis_controls": [
-        "2.4.1"
+        "3.6"
       ],
       "aws_controls": [
         "[KMS.4]"
@@ -520,7 +504,7 @@
       "status": "PASS",
       "message": "KMS key automatic key rotation is enabled.",
       "cis_controls": [
-        "2.4.1"
+        "3.6"
       ],
       "aws_controls": [
         "[KMS.4]"
@@ -537,7 +521,7 @@
       "status": "UNKNOWN",
       "message": "KMS key enable_key_rotation expression cannot be resolved statically.",
       "cis_controls": [
-        "2.4.1"
+        "3.6"
       ],
       "aws_controls": [
         "[KMS.4]"
@@ -554,7 +538,7 @@
       "status": "UNKNOWN",
       "message": "KMS key enable_key_rotation expression cannot be resolved statically.",
       "cis_controls": [
-        "2.4.1"
+        "3.6"
       ],
       "aws_controls": [
         "[KMS.4]"
@@ -571,7 +555,7 @@
       "status": "FAIL",
       "message": "RDS instance has publicly_accessible configured as true, exposing the database to the internet.",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -588,7 +572,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -618,7 +602,7 @@
       "status": "FAIL",
       "message": "RDS instance has publicly_accessible configured as true, exposing the database to the internet.",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -635,7 +619,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -665,7 +649,7 @@
       "status": "FAIL",
       "message": "RDS instance has publicly_accessible configured as true, exposing the database to the internet.",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -682,7 +666,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -712,7 +696,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible is set to false.",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -729,7 +713,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -759,7 +743,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -776,7 +760,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -806,7 +790,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible is set to false.",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -823,7 +807,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -853,7 +837,7 @@
       "status": "UNKNOWN",
       "message": "RDS instance publicly_accessible expression cannot be resolved statically.",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -870,7 +854,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -900,7 +884,7 @@
       "status": "UNKNOWN",
       "message": "RDS instance publicly_accessible expression cannot be resolved statically.",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -917,7 +901,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -947,7 +931,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -964,7 +948,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted is set to 'False' instead of true.",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -994,7 +978,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -1011,7 +995,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -1041,7 +1025,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -1058,7 +1042,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted is set to 'False' instead of true.",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -1088,7 +1072,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -1105,7 +1089,7 @@
       "status": "PASS",
       "message": "RDS instance has storage encryption enabled.",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -1135,7 +1119,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -1152,7 +1136,7 @@
       "status": "PASS",
       "message": "RDS instance has storage encryption enabled.",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -1182,7 +1166,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -1199,7 +1183,7 @@
       "status": "PASS",
       "message": "RDS instance has storage encryption enabled.",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -1229,7 +1213,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -1246,7 +1230,7 @@
       "status": "UNKNOWN",
       "message": "RDS instance storage_encrypted expression cannot be resolved statically.",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -1276,7 +1260,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -1293,7 +1277,7 @@
       "status": "UNKNOWN",
       "message": "RDS instance storage_encrypted expression cannot be resolved statically.",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -1323,8 +1307,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1340,9 +1323,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1358,12 +1339,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -1376,8 +1353,7 @@
       "status": "FAIL",
       "message": "Public access block setting 'block_public_policy' is set to 'False' instead of true.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1393,9 +1369,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1411,12 +1385,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -1429,8 +1399,7 @@
       "status": "FAIL",
       "message": "Public access block setting 'block_public_acls' is set to 'False' instead of true.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1446,9 +1415,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1464,12 +1431,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -1482,8 +1445,7 @@
       "status": "PASS",
       "message": "S3 bucket is guarded by public access block with all four protection settings enabled.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1499,9 +1461,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1517,12 +1477,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -1535,8 +1491,7 @@
       "status": "PASS",
       "message": "S3 bucket is guarded by public access block with all four protection settings enabled.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1552,9 +1507,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1570,12 +1523,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -1588,8 +1537,7 @@
       "status": "PASS",
       "message": "S3 bucket is guarded by public access block with all four protection settings enabled.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1605,9 +1553,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1623,12 +1569,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -1641,8 +1583,7 @@
       "status": "UNKNOWN",
       "message": "Public access block setting 'block_public_acls' contains an unresolvable expression.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1658,9 +1599,7 @@
       "line_number": 5,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1676,12 +1615,8 @@
       "line_number": 5,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -1694,8 +1629,7 @@
       "status": "UNKNOWN",
       "message": "Public access block setting 'block_public_policy' contains an unresolvable expression.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1711,9 +1645,7 @@
       "line_number": 5,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1729,12 +1661,8 @@
       "line_number": 5,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -1747,8 +1675,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1764,9 +1691,7 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1782,12 +1707,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -1800,8 +1721,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1817,9 +1737,7 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket ACL is set to 'public-read-write', allowing public unauthorized access.",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1835,12 +1753,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -1853,8 +1767,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1870,9 +1783,7 @@
       "line_number": 5,
       "status": "FAIL",
       "message": "S3 bucket ACL is set to 'public-read', allowing public unauthorized access.",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1888,12 +1799,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -1906,8 +1813,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1923,9 +1829,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket ACL is set to non-public permission 'private'.",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1941,12 +1845,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -1959,8 +1859,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -1976,9 +1875,7 @@
       "line_number": 5,
       "status": "PASS",
       "message": "S3 bucket ACL is set to non-public permission 'private'.",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -1994,12 +1891,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -2012,8 +1905,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -2029,9 +1921,7 @@
       "line_number": 5,
       "status": "PASS",
       "message": "S3 bucket ACL is set to non-public permission 'log-delivery-write'.",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -2047,12 +1937,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -2065,8 +1951,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -2082,9 +1967,7 @@
       "line_number": 5,
       "status": "UNKNOWN",
       "message": "S3 bucket ACL expression cannot be resolved statically.",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -2100,12 +1983,8 @@
       "line_number": 5,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -2118,8 +1997,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -2135,9 +2013,7 @@
       "line_number": 5,
       "status": "UNKNOWN",
       "message": "S3 bucket ACL expression cannot be resolved statically.",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -2153,12 +2029,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -2171,8 +2043,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -2188,9 +2059,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -2206,12 +2075,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -2224,8 +2089,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -2241,9 +2105,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -2259,12 +2121,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -2277,8 +2135,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -2294,9 +2151,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -2312,12 +2167,8 @@
       "line_number": 1,
       "status": "FAIL",
       "message": "S3 bucket lacks an explicit server-side encryption configuration in code (AWS enforces SSE-S3 by default since Jan 2023; explicit IaC declaration enforces cryptographic standards).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -2330,8 +2181,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -2347,9 +2197,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -2365,12 +2213,8 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket has explicit server-side encryption declared (AES256).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -2383,8 +2227,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -2400,9 +2243,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -2418,12 +2259,8 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -2436,8 +2273,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -2453,9 +2289,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -2471,12 +2305,8 @@
       "line_number": 5,
       "status": "PASS",
       "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -2489,8 +2319,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -2506,9 +2335,7 @@
       "line_number": 1,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -2524,12 +2351,8 @@
       "line_number": 5,
       "status": "PASS",
       "message": "S3 bucket has explicit server-side encryption declared (aws:kms).",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -2542,8 +2365,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -2559,9 +2381,7 @@
       "line_number": 5,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -2577,12 +2397,8 @@
       "line_number": 5,
       "status": "UNKNOWN",
       "message": "Server-side encryption algorithm expression cannot be resolved statically.",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "S3-01",
@@ -2595,8 +2411,7 @@
       "status": "FAIL",
       "message": "S3 bucket lacks an associated aws_s3_bucket_public_access_block configuration.",
       "cis_controls": [
-        "2.1.4",
-        "2.1.5"
+        "2.1.4"
       ],
       "aws_controls": [
         "[S3.1]"
@@ -2612,9 +2427,7 @@
       "line_number": 5,
       "status": "PASS",
       "message": "S3 bucket does not declare public ACL permissions (defaults to private access).",
-      "cis_controls": [
-        "2.1.5"
-      ],
+      "cis_controls": [],
       "aws_controls": [
         "[S3.2]",
         "[S3.3]"
@@ -2630,12 +2443,8 @@
       "line_number": 9,
       "status": "UNKNOWN",
       "message": "Server-side encryption algorithm expression cannot be resolved statically.",
-      "cis_controls": [
-        "2.1.1"
-      ],
-      "aws_controls": [
-        "[S3.4]"
-      ]
+      "cis_controls": [],
+      "aws_controls": []
     },
     {
       "rule_id": "SEC-01",
@@ -2661,7 +2470,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -2678,7 +2487,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -2708,7 +2517,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -2725,7 +2534,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -2768,7 +2577,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -2785,7 +2594,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -2828,7 +2637,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -2845,7 +2654,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -2875,7 +2684,7 @@
       "status": "PASS",
       "message": "RDS instance publicly_accessible attribute is omitted (defaults to false).",
       "cis_controls": [
-        "2.3.1"
+        "2.3.3"
       ],
       "aws_controls": [
         "[RDS.2]"
@@ -2892,7 +2701,7 @@
       "status": "FAIL",
       "message": "RDS instance storage_encrypted argument is missing or omitted (defaults to unencrypted).",
       "cis_controls": [
-        "2.3.2"
+        "2.3.1"
       ],
       "aws_controls": [
         "[RDS.3]"
@@ -2922,10 +2731,12 @@
       "status": "FAIL",
       "message": "Ingress rule allows unrestricted access to port 22 (range 22-22).",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -2939,10 +2750,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 3389.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -2956,10 +2769,12 @@
       "status": "PASS",
       "message": "Security group defines no inline ingress rules.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -2973,10 +2788,12 @@
       "status": "FAIL",
       "message": "Ingress rule allows unrestricted access to port 22 (range 22-22).",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -2990,10 +2807,12 @@
       "status": "PASS",
       "message": "Security group defines no inline ingress rules.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3007,10 +2826,12 @@
       "status": "PASS",
       "message": "Port range does not expose target administrative port.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3024,10 +2845,12 @@
       "status": "FAIL",
       "message": "Ingress rule allows unrestricted access to port 22 (range 20-25).",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3041,10 +2864,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 3389.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3058,10 +2883,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 22.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3075,10 +2902,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 3389.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3092,10 +2921,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 22.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3109,10 +2940,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 3389.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3126,10 +2959,12 @@
       "status": "PASS",
       "message": "Security group defines no inline ingress rules.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3143,10 +2978,12 @@
       "status": "PASS",
       "message": "Security group rule is not an ingress rule.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3160,10 +2997,12 @@
       "status": "PASS",
       "message": "Security group defines no inline ingress rules.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3177,10 +3016,12 @@
       "status": "PASS",
       "message": "Security group rule is not an ingress rule.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3194,10 +3035,12 @@
       "status": "UNKNOWN",
       "message": "Ingress CIDR block expression cannot be resolved statically.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3211,10 +3054,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 3389.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3228,10 +3073,12 @@
       "status": "UNKNOWN",
       "message": "Ingress port/protocol expression cannot be resolved statically.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3245,10 +3092,12 @@
       "status": "UNKNOWN",
       "message": "Ingress port/protocol expression cannot be resolved statically.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3262,10 +3111,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 22.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3279,10 +3130,12 @@
       "status": "FAIL",
       "message": "Ingress rule allows unrestricted access to port 3389 (range 3389-3389).",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3296,10 +3149,12 @@
       "status": "PASS",
       "message": "Security group defines no inline ingress rules.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3313,10 +3168,12 @@
       "status": "PASS",
       "message": "Port range does not expose target administrative port.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3330,10 +3187,12 @@
       "status": "PASS",
       "message": "Security group defines no inline ingress rules.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3347,10 +3206,12 @@
       "status": "FAIL",
       "message": "Ingress rule allows unrestricted access to port 3389 (range 3389-3389).",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3364,10 +3225,12 @@
       "status": "FAIL",
       "message": "Ingress rule allows unrestricted access to port 22 (all protocols/ports (includes port 22)).",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3381,10 +3244,12 @@
       "status": "FAIL",
       "message": "Ingress rule allows unrestricted access to port 3389 (all protocols/ports (includes port 3389)).",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3398,10 +3263,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 22.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3415,10 +3282,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 3389.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3432,10 +3301,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 22.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3449,10 +3320,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 3389.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3466,10 +3339,12 @@
       "status": "PASS",
       "message": "Security group defines no inline ingress rules.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3483,10 +3358,12 @@
       "status": "PASS",
       "message": "Port range does not expose target administrative port.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3500,10 +3377,12 @@
       "status": "PASS",
       "message": "Security group defines no inline ingress rules.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3517,10 +3396,12 @@
       "status": "PASS",
       "message": "No public 0.0.0.0/0 or ::/0 CIDR in ingress rule.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3534,10 +3415,12 @@
       "status": "PASS",
       "message": "Security group does not allow unrestricted ingress to port 22.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3551,10 +3434,12 @@
       "status": "UNKNOWN",
       "message": "Ingress CIDR block expression cannot be resolved statically.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3568,10 +3453,12 @@
       "status": "PASS",
       "message": "Security group defines no inline ingress rules.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3585,10 +3472,12 @@
       "status": "PASS",
       "message": "Port range does not expose target administrative port.",
       "cis_controls": [
-        "5.2"
+        "5.2",
+        "5.3"
       ],
       "aws_controls": [
-        "[EC2.13]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3602,10 +3491,12 @@
       "status": "PASS",
       "message": "Security group defines no inline ingress rules.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     },
     {
@@ -3619,14 +3510,16 @@
       "status": "UNKNOWN",
       "message": "Ingress CIDR block expression cannot be resolved statically.",
       "cis_controls": [
+        "5.2",
         "5.3"
       ],
       "aws_controls": [
-        "[EC2.14]"
+        "[EC2.53]",
+        "[EC2.54]"
       ]
     }
   ],
   "resources_evaluated": 102,
-  "scan_duration_ms": 3567.2,
-  "cli_wall_ms": 2405.14
+  "scan_duration_ms": 250.38,
+  "cli_wall_ms": 271.55
 }
