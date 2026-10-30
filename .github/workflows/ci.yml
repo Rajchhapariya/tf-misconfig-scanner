@@ -53,14 +53,29 @@ jobs:
         run: |
           pip install -e .
 
-      - name: Scan Compliant Baseline Fixture & Emit SARIF
+      - name: Fetch TerraGoat
+        run: |
+          bash scripts/fetch_terragoat.sh
+
+      - name: Scan Fixtures & Emit SARIF
         run: |
           mkdir -p results
-          tfscan scan fixtures/KMS-01/pass --format sarif --output results/tfscan.sarif
+          tfscan scan fixtures/ --format sarif --output results/fixtures.sarif || true
 
-      - name: Upload SARIF to GitHub Code Scanning
+      - name: Scan TerraGoat AWS & Emit SARIF
+        run: |
+          tfscan scan data/terragoat/terraform/aws --format sarif --output results/terragoat.sarif || true
+
+      - name: Upload Fixtures SARIF to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
-          sarif_file: results/tfscan.sarif
-          category: tfscan-static-analysis
+          sarif_file: results/fixtures.sarif
+          category: tfscan-fixtures
+
+      - name: Upload TerraGoat SARIF to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: results/terragoat.sarif
+          category: tfscan-terragoat

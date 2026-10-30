@@ -205,3 +205,37 @@ The Center for Internet Security (CIS) Benchmarks provide consensus-driven, vend
 1. **Pull Request Trigger:** Runs on pull requests modifying `.tf` or `.tfvars` files.
 2. **Exit Code Gating:** Returns exit code 1 whenever any `FAIL` finding is detected, immediately failing the CI status check and preventing pull request merge.
 3. **Code Scanning SARIF Export:** Generates SARIF v2.1.0 output uploaded via `github/codeql-action/upload-sarif`, annotating vulnerable lines directly in the pull request diff view.
+
+---
+
+## 6. Stretch Goals: Plan JSON Scanning & Comparison Scope
+
+### 6.1 Terraform Plan JSON Scanning (`tfscan scan --plan <file.json>`)
+`tfscan` supports scanning compiled pre-deployment Terraform execution plans generated via `terraform show -json tfplan.binary`.
+
+**Execution Workflow (Zero Cloud Credentials):**
+```bash
+# Generate execution plan skipping cloud authentication
+terraform plan -out=tfplan.binary
+terraform show -json tfplan.binary > tfplan.json
+
+# Scan plan JSON with tfscan
+tfscan scan tfplan.json --plan --format table
+```
+
+**Rule Compatibility in Plan JSON Mode:**
+- **Fully Supported Rules:**
+  - `S3-01`, `S3-02`, `S3-03`: S3 satellite resources (`aws_s3_bucket_public_access_block`, `aws_s3_bucket_acl`, `aws_s3_bucket_server_side_encryption_configuration`) are flattened into `planned_values.root_module.resources`.
+  - `SG-01`, `SG-02`: Evaluates both inline ingress rules on `aws_security_group` and standalone `aws_security_group_rule` resources.
+  - `RDS-01`, `RDS-02`: Evaluates planned `publicly_accessible` and `storage_encrypted` attributes on `aws_db_instance`.
+  - `EBS-01`: Evaluates planned `encrypted` argument on `aws_ebs_volume`.
+  - `CT-01`: Evaluates planned `is_multi_region_trail` and `enable_log_file_validation` on `aws_cloudtrail`.
+  - `IAM-01`: Evaluates rendered or literal IAM policy document JSON statements.
+  - `KMS-01`: Evaluates planned `enable_key_rotation` attribute on `aws_kms_key`.
+  - `SEC-01` (Resource level): Evaluates literal sensitive arguments (`password`, etc.) declared on managed resources.
+- **Rules with Operational Limitations:**
+  - `SEC-01` (Provider level): In Terraform plan JSON, `provider "aws"` declarations are located under `configuration.provider_config` rather than `planned_values.root_module.resources`. Hardcoded provider credentials require raw HCL parsing.
+  - Dynamic / Apply-Time Unknowns: Resource attributes that can only be computed by AWS during `apply` (marked as `unknown` in plan JSON) cannot be statically evaluated and resolve to `UNKNOWN`.
+
+### 6.2 Third-Tool Comparison (Trivy)
+Trivy (Aqua Security) v0.76.1 was evaluated as an auxiliary comparison engine. While Checkov and tfscan operate natively as Terraform static AST scanners, Trivy bundles vulnerability and misconfiguration checks via Defsec Rego policies (e.g. `AWS-0065` for KMS key rotation). Trivy comparison integration is documented as an extensible evaluation module.
