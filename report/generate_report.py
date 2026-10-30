@@ -3,27 +3,36 @@ import json
 from pathlib import Path
 import subprocess
 
-ROOT = Path(r"C:\Users\Rajch\Desktop\Research\tf-misconfig-scanner")
-S = json.loads((ROOT / "results" / "summary_scores.json").read_text(encoding="utf-8"))
-titles = {r["rule_id"]: r["rule_title"] for r in csv.DictReader(open(ROOT / "docs" / "checkov_mapping.csv", encoding="utf-8"))}
-dis = list(csv.DictReader(open(ROOT / "results" / "disagreement_report.csv", encoding="utf-8")))
+ROOT = Path(__file__).resolve().parent.parent
+S = json.loads(
+    (ROOT / "results" / "summary_scores.json").read_text(encoding="utf-8"))
+titles = {r["rule_id"]: r["rule_title"] for r in csv.DictReader(
+    open(ROOT / "docs" / "checkov_mapping.csv", encoding="utf-8"))}
+dis = list(csv.DictReader(open(ROOT / "results" /
+           "disagreement_report.csv", encoding="utf-8")))
+
 
 def pct(v):
     return "n/a" if v is None else f"{v*100:.1f}%"
 
+
 def f1(v):
     return "n/a" if v is None else f"{v:.3f}"
 
+
 def esc(t):
     return t.replace("#", "\\#").replace("$", "\\$").replace("*", "\\*").replace("_", "\\_").replace("<", "\\<").replace("@", "\\@")
+
 
 A, H = S["aggregate"], S["aggregate_headline"]
 D = S["dataset_aggregates"]
 P = S["performance"]
 ex = ", ".join(S["headline_excludes"])
 
+
 def cell(x):
     return f"[{esc(str(x))}]"
+
 
 rows = []
 for rid in sorted(S["per_rule_scores"]):
@@ -161,5 +170,6 @@ Evaluation exposed two scanner weaknesses, both found by checking disagreements 
 '''
 
 (ROOT / "report" / "report.typ").write_text(typ, encoding="utf-8")
-subprocess.run(["typst", "compile", str(ROOT / "report" / "report.typ"), str(ROOT / "report" / "report.pdf"), "--root", str(ROOT)], check=True)
+subprocess.run(["typst", "compile", str(ROOT / "report" / "report.typ"),
+               str(ROOT / "report" / "report.pdf"), "--root", str(ROOT)], check=True)
 print("Report compiled successfully")
